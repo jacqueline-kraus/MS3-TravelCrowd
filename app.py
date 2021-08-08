@@ -23,6 +23,11 @@ def get_deals():
     return render_template("deals.html", deals=deals)
 
 
+@app.route("/registration")
+def registration():
+    return render_template("registration.html")
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
