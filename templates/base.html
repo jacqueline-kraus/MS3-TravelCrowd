@@ -19,9 +19,9 @@
                     <a href="#!" class="brand-logo">Logo</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Deals</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('get_deals') }}">Deals</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('registration') }}">Register</a></li>
                     </ul>
                 </div>

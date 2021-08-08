@@ -15,7 +15,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-lock prefix"></i>
-                <input id="password" name="password" type="tel" class="validate" required>
+                <input id="password" name="password" type="password" class="validate" required>
                 <label for="password">Password</label>
             </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="row">
-            <a href="#" class="col s6 m2 btn offset-m5 offset-s3">Login</a>
+            <a href="{{ url_for('login') }}" class="col s6 m2 btn offset-m5 offset-s3">Login</a>
         </div>
     </form>
   </div>
