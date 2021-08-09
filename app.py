@@ -3,6 +3,7 @@ import ssl
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import random
 
 if os.path.exists("env.py"):
     import env
@@ -25,7 +26,8 @@ def get_deals():
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    randomImage = random.randrange(1, 5)
+    return render_template("home.html", randomImage=randomImage)
 
 
 @app.route("/registration")
