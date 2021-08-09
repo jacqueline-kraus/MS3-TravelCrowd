@@ -5,22 +5,7 @@
 
 .bg-heroimage {
     background-size: cover;
-}
-
-.image-1 {
-    background-image: url('/static/images/heroimage.jpg');
-}
-
-.image-2 {
-    background-image: url('/static/images/heroimage2.jpg');
-}
-
-.image-3 {
-    background-image: url('/static/images/heroimage3.jpg');
-}
-
-.image-4 {
-    background-image: url('/static/images/heroimage4.jpg');
+    background-image: url('/static/images/heroimage.jpg')
 }
 
 nav {
