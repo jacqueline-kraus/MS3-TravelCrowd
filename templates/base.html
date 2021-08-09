@@ -16,8 +16,8 @@
             <!-- desktop navbar-->
             <nav class="transparent">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo"></a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <a href="#!" class="brand-logo offset-m5"><img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('get_deals') }}">Deals</a></li>
@@ -28,10 +28,10 @@
             </nav>
             <!-- mobile navbar -->
             <ul class="sidenav" id="mobile-demo">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('get_deals') }}">Deals</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('registration') }}">Register</a></li>
             </ul>
         </header>
 
