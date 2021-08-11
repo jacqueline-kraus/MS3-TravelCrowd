@@ -4,7 +4,9 @@
 <div class="row">
 
     <!-- registration form taken from registration.html -->
-    <form class="col s10 m5 offset-s1 offset-m1 main-margin grey lighten-3">
+    <form class="col s10 m5 offset-s1 offset-m1 main-margin grey lighten-3" method="POST" action="{{ url_for('registration') }}">
+        <h5 class="center-align">Want to be part of the travel deal community?<br>Register now!</h5>
+        <br>
         <!-- username input -->
         <div class="row">
             <div class="input-field col s12">
