@@ -20,9 +20,13 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
+                        {% if session.user %}
                         <li><a href="{{ url_for('get_deals') }}">Deals</a></li>
+                        <li><a href="#">logout</a></li>
+                        {% else %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('registration') }}">Register</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
@@ -34,6 +38,20 @@
                 <li><a href="{{ url_for('registration') }}">Register</a></li>
             </ul>
         </header>
+        <section>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages%}
+                        <div class="row flashes">
+                            <h4 class="red-text center-align">
+                                {{ message }}
+                            </h4>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </section>
 
         {% block content %}
 
