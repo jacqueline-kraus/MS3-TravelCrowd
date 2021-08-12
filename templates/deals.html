@@ -1,29 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s10 m6 offset-m3 main-margin">
-            <ul class="collapsible">
-                {% for deal in deals %}
-                    <li>
-                        <div class="collapsible-header"><i class="fas fa-map-marker-alt"></i>
-                            {{ deal.destination_country }}
-                        </div>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>Destination country: {{ deal.destination_country }}</li>
-                                <li>Destination city: {{ deal.destination_city }}</li>
-                                <li>Total price: {{ deal.price }}€</li>
-                                <li>Description: {{ deal.description }}</li>
-                                <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
-                                <li>Travel period: {{ deal.period }}</li>
-                            </ul>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+    {% include "partials/deals_collapsible.html" %}
 
 
 
