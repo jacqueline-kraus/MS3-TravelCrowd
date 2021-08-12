@@ -3,13 +3,10 @@
     margin-bottom: 2rem;
 }
 
-.brand-logo {
-    margin-left: 2rem;
-}
-
 .bg-heroimage {
     background-size: cover;
-    background-image: url('/static/images/heroimage.jpg')
+    background-image: url('/static/images/heroimage.jpg');
+    background-repeat: no-repeat;
 }
 
 nav {
