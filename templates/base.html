@@ -16,7 +16,13 @@
             <!-- desktop navbar-->
             <nav class="transparent">
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('home') }}!" class="brand-logo offset-m5"><img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo"></a>
+                    {% if session.user %}
+                        <a href="{{ url_for('home_loggedin') }}" class="brand-logo offset-m5">
+                    {% else %}
+                        <a href="{{ url_for('home') }}" class="brand-logo offset-m5">
+                    {% endif %}
+                        <img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo">
+                        </a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         {% include "partials/nav.html"%}
