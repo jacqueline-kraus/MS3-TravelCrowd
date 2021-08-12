@@ -54,7 +54,7 @@ def registration():
     return render_template("registration.html")
 
 
-@app.route("/login")
+@app.route("/login", methods=["GET", "POST"])
 def login():
     return render_template("login.html")
 
@@ -69,6 +69,13 @@ def profile(username):
         return render_template("profile.html", username=username, deals=deals)
     return redirect(url_for("login"))
 
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookies
+    flash("Successfully logged out!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
