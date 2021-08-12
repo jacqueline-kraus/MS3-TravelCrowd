@@ -16,14 +16,14 @@
             <!-- desktop navbar-->
             <nav class="transparent">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo offset-m5"><img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo"></a>
+                    <a href="{{ url_for('home') }}!" class="brand-logo offset-m5"><img src="/static/images/logo_travelcrowd.png" alt="travelcrowd logo"></a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         {% if session.user %}
                         <li><a href="{{ url_for('get_deals') }}">Deals</a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="#">logout</a></li>
+                        <li><a href="{{ url_for('logout') }}">logout</a></li>
                         {% else %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('registration') }}">Register</a></li>
