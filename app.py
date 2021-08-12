@@ -30,32 +30,38 @@ def home():
 
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
-    # registration is the same as in CI videos
-    if request.method == "POST": 
-        #check if username already exists in db
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-        
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("registration"))
+    if "user" not in session:
+        # registration is the same as in CI videos
+        if request.method == "POST": 
+            #check if username already exists in database
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
+            
+            if existing_user:
+                flash("Username already exists")
+                return redirect(url_for("registration"))
 
-        register = {
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
+            register = {
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password"))
+            }
+            mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+            # put the new user into 'session' cookie
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful!")
+            return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("registration.html")
+        return render_template("registration.html")
+    
+    # user is already logged-in, direct them to their profile
+    return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    
+    
     return render_template("login.html")
 
 
