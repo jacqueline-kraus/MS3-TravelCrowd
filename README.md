@@ -84,11 +84,13 @@ For diagram(database): https://lucid.app/
 
 https://www.befunky.com/create/ for image resize
 
-
+- add credits for authentication scripts
 
 add: @login required
 
 
-Add "created by"
-
 Add favicon
+
+Update Logo
+
+

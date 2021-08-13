@@ -110,6 +110,25 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/create_deal", methods=["GET", "POST"])
+def create_deal():
+    # add a new deal
+    if request.method == "POST":
+        deal = {
+            "deal_name": request.form.get("deal_name"),
+            "destination_country": request.form.get("destination_country"),
+            "destination_city": request.form.get("destination_city"),
+            "price": request.form.get("price"),
+            "description": request.form.get("description"),
+            "departure_airport": request.form.get("departure_airport"),
+            "period": request.form.get("period"),
+            "created_by": session["user"]
+        }
+        mongo.db.deals.insert_one(deal)
+        flash("Deal successfully published!")
+        return redirect(url_for("get_deals"))
+
+    return render_template("create_deal.html")
 
 
 if __name__ == "__main__":
