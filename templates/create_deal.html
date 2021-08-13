@@ -1,46 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <form class="col s12">
-        <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-            <label for="first_name">First Name</label>
+    <div class="row main-margin">
+        <form class="col s11 m6 offset-m3 white" method="POST" action="{{ url_for('create_deal') }}">
+            <h3 class="center-align">Create your Deal</h3><br>
+            <!-- deal name -->
+            <div class="row">
+                <div class="input-field col s12 m8 offset-m2">
+                    <textarea id="deal_name" name="deal_name" placeholder="Give your deal a catchy name" class="materialize-textarea" required></textarea>
+                    <label for="deal_name">Deal name</label>
+                </div>
             </div>
-            <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Last Name</label>
+            <!-- destination_country autocomplete input -->
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12 m8 offset-m2">
+                            <input type="text" name="destination_country" placeholder="Pleaser enter the destination country" id="destination_country" class="autocomplete" required>
+                            <label for="destination_country">Destination country</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-            <label for="disabled">Disabled</label>
+            <!-- destination city -->
+            <div class="row">
+                <div class="input-field col s12 m8 offset-m2">
+                    <textarea id="destination_city" name="destination_city" placeholder="Pleaser enter the destination city" class="materialize-textarea" required></textarea>
+                    <label for="destination_city">Destination city</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+            <!-- price -->
+            <div class="row">
+                <div class="input-field col s12 m3 offset-m2">
+                    <input placeholder="price" name="price" id="price" type="text" class="validate" required>
+                    <label for="price">Price in €</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
+            <!-- description -->
+            <div class="row">
+                <div class="input-field col s12 m8 offset-m2">
+                    <textarea id="description" name="description" placeholder="What is this deal about? Any additional info?" class="materialize-textarea" required></textarea>
+                    <label for="description">Description</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-            This is an inline input field:
-            <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+            <!-- departure airport -->
+            <div class="row">
+                <div class="input-field col s12 m8 offset-m2">
+                    <input id="departure_airport" name="departure_airport" placeholder="Where does this deal depart from?" type="text" class="validate" minlength="3" maxlength="3" required>
+                    <label for="departure_airport">departure airport (IATA)</label>
+                </div>
             </div>
+            <!-- start date -->
+            <div class="row">
+                <div class="input-field col s12 m8 offset-m2">
+                    <input type="text" id="start_date" name="start_date" placeholder="Please select the start date of your trip" class="datepicker" required>
+                    <label for="start_date">Start Date</label>
+                </div>
             </div>
-        </div>
+            <!-- amount days -->
+            <div class="row">
+                <div class="input-field col s12 m5 offset-m2">
+                    <input placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="text" class="validate" required>
+                    <label for="amount_days">Amount of days</label>
+                </div>
+            </div>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s10 m8 offset-m5">
+                    <button class="btn-large waves-effect waves-light" type="submit" required>
+                        Create Deal
+                    </button>
+                </div>
+            </div>
+            
         </form>
     </div>
         
