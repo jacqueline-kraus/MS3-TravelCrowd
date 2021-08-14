@@ -17,15 +17,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app, ssl_cert_reqs=ssl.CERT_NONE)
 
 @app.route("/")
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @app.route("/get_deals")
 def get_deals():
     deals = mongo.db.deals.find()
     return render_template("deals.html", deals=deals)
-
-
-@app.route("/home")
-def home():
-    return render_template("home.html")
 
 
 @app.route("/home_loggedin")

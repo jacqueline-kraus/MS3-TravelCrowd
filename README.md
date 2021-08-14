@@ -112,6 +112,5 @@ Make Home as starting page.
 
 Placeholder for when there are no deals in my profile yet (newly registered user)
 
-link to book einbauen
 
 price & amount days: only int
