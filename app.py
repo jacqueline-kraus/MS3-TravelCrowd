@@ -158,6 +158,20 @@ def edit_deal(deal_id):
     return redirect(url_for("get_deals"))
 
 
+@app.route("/delete_deal/<deal_id>")
+def delete_deal(deal_id):
+    deal = mongo.db.deals.find_one({"_id": ObjectId(deal_id)})
+    if session["user"].lower() == deal["created_by"].lower():
+        mongo.db.deals.remove({"_id": ObjectId(deal_id)})
+        flash("Deal successfully deleted!")
+        return redirect(url_for("get_deals"))
+        
+    flash("You have no permission to delete this task")
+    return redirect(url_for("get_deals"))
+
+
+
+
 
 
 if __name__ == "__main__":
