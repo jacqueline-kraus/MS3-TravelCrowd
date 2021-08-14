@@ -2,12 +2,14 @@
 {% block content %}
 
     <div class="row main-margin">
-        <form class="col s11 m6 offset-m3 white" method="POST" action="{{ url_for('create_deal') }}">
-            <h3 class="center-align">Create your Deal</h3><br>
+        <form class="col s11 m6 offset-m3 white" method="POST" action="{{ url_for('edit_deal', deal_id=deal._id) }}">
+            <h3 class="center-align">Here you can update your Deal</h3><br>
             <!-- deal name -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <textarea id="deal_name" name="deal_name" placeholder="Give your deal a catchy name" class="materialize-textarea" required></textarea>
+                    <textarea id="deal_name" name="deal_name" placeholder="Give your deal a catchy name" class="materialize-textarea" required>
+                        {{- deal.deal_name -}}
+                    </textarea>
                     <label for="deal_name">Deal name</label>
                 </div>
             </div>
@@ -16,7 +18,7 @@
                 <div class="col s12">
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
-                            <input type="text" name="destination_country" placeholder="Pleaser enter the destination country" id="destination_country" class="autocomplete" required>
+                            <input type="text" value="{{ deal.destination_country }}" name="destination_country" placeholder="Pleaser enter the destination country" id="destination_country" class="autocomplete" required>
                             <label for="destination_country">Destination country</label>
                         </div>
                     </div>
@@ -25,42 +27,46 @@
             <!-- destination city -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <textarea id="destination_city" name="destination_city" placeholder="Pleaser enter the destination city" class="materialize-textarea" required></textarea>
+                    <textarea id="destination_city" name="destination_city" placeholder="Pleaser enter the destination city" class="materialize-textarea" required>
+                        {{- deal.destination_city -}}
+                    </textarea>
                     <label for="destination_city">Destination city</label>
                 </div>
             </div>
             <!-- price -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m2">
-                    <input placeholder="price" name="price" id="price" type="text" class="validate" required>
+                    <input value="{{ deal.price }}" placeholder="price" name="price" id="price" type="text" class="validate" required>
                     <label for="price">Price in €</label>
                 </div>
             </div>
             <!-- description -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <textarea id="description" name="description" placeholder="What is this deal about? Any additional info?" class="materialize-textarea" required></textarea>
+                    <textarea id="description" name="description" placeholder="What is this deal about? Any additional info?" class="materialize-textarea" required>
+                        {{- deal.description -}}
+                    </textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
             <!-- departure airport -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <input id="departure_airport" name="departure_airport" placeholder="Where does this deal depart from?" type="text" class="validate" minlength="3" maxlength="3" required>
+                    <input value="{{ deal.departure_airport }}" id="departure_airport" name="departure_airport" placeholder="Where does this deal depart from?" type="text" class="validate" minlength="3" maxlength="3" required>
                     <label for="departure_airport">departure airport (IATA)</label>
                 </div>
             </div>
             <!-- start date -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <input type="text" id="start_date" name="start_date" placeholder="Please select the start date of your trip" class="datepicker" required>
+                    <input value="{{ deal.start_date }}" type="text" id="start_date" name="start_date" placeholder="Please select the start date of your trip" class="datepicker" required>
                     <label for="start_date">Start Date</label>
                 </div>
             </div>
             <!-- amount days -->
             <div class="row">
                 <div class="input-field col s12 m5 offset-m2">
-                    <input placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="text" class="validate" required>
+                    <input value="{{ deal.amount_days }}" placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="text" class="validate" required>
                     <label for="amount_days">Amount of days</label>
                 </div>
             </div>
