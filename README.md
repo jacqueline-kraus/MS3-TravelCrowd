@@ -93,4 +93,15 @@ Add favicon
 
 Update Logo
 
+Create deal form:
+- update Period --> build script to get period automatically from start date + amount of days
 
+padding in form
+
+general styling of forms!!
+
+change font (everywhere)
+
+Make "created by"- session user :: show only own creted deals on profile
+
+{{ url_for('edit_deal', deal_id=deal._id) }}
