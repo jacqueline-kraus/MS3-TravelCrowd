@@ -124,6 +124,7 @@ def create_deal():
             "departure_airport": request.form.get("departure_airport"),
             "start_date": request.form.get("start_date"),
             "amount_days": request.form.get("amount_days"),
+            "booking_link": request.form.get("booking_link"),
             "created_by": session["user"]
         }
         mongo.db.deals.insert_one(deal)
@@ -147,6 +148,7 @@ def edit_deal(deal_id):
             "departure_airport": request.form.get("departure_airport"),
             "start_date": request.form.get("start_date"),
             "amount_days": request.form.get("amount_days"),
+            "booking_link": request.form.get("booking_link"),
             "created_by": session["user"]
             }
             mongo.db.deals.update({"_id": ObjectId(deal_id)}, submit)

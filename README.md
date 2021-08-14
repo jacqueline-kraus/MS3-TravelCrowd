@@ -105,3 +105,13 @@ change font (everywhere)
 Make "created by"- session user :: show only own creted deals on profile
 
 Testing for textareas --> eventually limit the amount of characters!
+
+Check reuirements for username/password, it only says "match the reuirements, but not which requirements.
+
+Make Home as starting page.
+
+Placeholder for when there are no deals in my profile yet (newly registered user)
+
+link to book einbauen
+
+price & amount days: only int

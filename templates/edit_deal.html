@@ -70,6 +70,13 @@
                     <label for="amount_days">Amount of days</label>
                 </div>
             </div>
+            <!-- booking link -->
+            <div class="row">
+                <div class="input-field col s12 m5 offset-m2">
+                    <input value="{{ deal.booking_link }}" name="booking_link" id="booking_link" type="url" pattern="https://.*" class="validate" required>
+                    <label for="booking_link">Booking link</label>
+                </div>
+            </div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
