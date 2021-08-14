@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    {% include "partials/deals_collapsible.html" %}
-
     {% if session.user %}
-        {% include "partials/btn-create-deal.html" %}
+        {% include "partials/deals_collapsible.html" %}
     {% endif %}
+
+    
+    {% include "partials/btn-create-deal.html" %}
+    
 
 
 

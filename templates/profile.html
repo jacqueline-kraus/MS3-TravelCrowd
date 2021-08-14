@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h2 class="center-align white-text">Hello {{ username }}!</h2>
+    <h2 class="center-align white-text">Hello {{ user.username }}!</h2>
     {% include "partials/deals_collapsible.html" %}
     {% include "partials/btn-create-deal.html" %}
+    
 
 {% endblock  %}

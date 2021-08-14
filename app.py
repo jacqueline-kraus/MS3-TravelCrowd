@@ -93,12 +93,13 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    #grab the sessions user username from db
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-
-    if session["user"]:
-        deals = mongo.db.deals.find()
-        return render_template("profile.html", username=username, deals=deals)
+    if session["user"].lower() == username.lower():
+        # find the session.user
+        user = mongo.db.users.find_one({"username": username})
+        # find only deals created by session.user
+        deals = list(mongo.db.deals.find({"created_by": username}))
+        return render_template("profile.html", user=user, deals=deals)
+    
     return redirect(url_for("login"))
 
 
@@ -165,7 +166,7 @@ def delete_deal(deal_id):
         mongo.db.deals.remove({"_id": ObjectId(deal_id)})
         flash("Deal successfully deleted!")
         return redirect(url_for("get_deals"))
-        
+
     flash("You have no permission to delete this task")
     return redirect(url_for("get_deals"))
 

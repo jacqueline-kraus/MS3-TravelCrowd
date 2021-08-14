@@ -104,3 +104,4 @@ change font (everywhere)
 
 Make "created by"- session user :: show only own creted deals on profile
 
+Testing for textareas --> eventually limit the amount of characters!
