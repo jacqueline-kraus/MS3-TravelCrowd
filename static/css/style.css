@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@300&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.amatic {
+    font-family: 'Amatic SC';
+}
+
+.logo {
+    line-height: 10%;
+    margin-left: 2rem;
+}
+
 .main-margin {
     margin-top: 4rem;
     margin-bottom: 2rem;
