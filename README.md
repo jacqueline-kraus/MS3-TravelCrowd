@@ -116,3 +116,5 @@ Placeholder for when there are no deals in my profile yet (newly registered user
 
 
 price & amount days: only int
+
+fix later: favicon is not shown
