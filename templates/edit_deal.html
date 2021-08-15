@@ -36,7 +36,7 @@
             <!-- price -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m2">
-                    <input value="{{ deal.price }}" placeholder="price" name="price" id="price" type="text" class="validate" required>
+                    <input value="{{ deal.price }}" placeholder="price" name="price" id="price" type="number" class="validate" required>
                     <label for="price">Price in €</label>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <!-- departure airport -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
-                    <input value="{{ deal.departure_airport }}" id="departure_airport" name="departure_airport" placeholder="Where does this deal depart from?" type="text" class="validate" minlength="3" maxlength="3" required>
+                    <input value="{{ deal.departure_airport }}" id="departure_airport" name="departure_airport" placeholder="Where does this deal depart from?" type="text" class="validate" pattern="[A-Za-z]{3}" data-length="3" required>
                     <label for="departure_airport">departure airport (IATA)</label>
                 </div>
             </div>
@@ -66,7 +66,7 @@
             <!-- amount days -->
             <div class="row">
                 <div class="input-field col s12 m5 offset-m2">
-                    <input value="{{ deal.amount_days }}" placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="text" class="validate" required>
+                    <input value="{{ deal.amount_days }}" placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="number" class="validate" required>
                     <label for="amount_days">Amount of days</label>
                 </div>
             </div>
