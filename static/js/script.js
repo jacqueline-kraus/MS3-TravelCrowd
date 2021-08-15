@@ -13,5 +13,13 @@ $(document).ready(function(){
         "Austria": null,
       },
     });
-    $('.datepicker').datepicker();
+    $(".datepicker").datepicker({
+      format: "dd mmmm, yyyy",
+      yearRange: 3,
+      showClearBtn: true,
+      i18n: {
+          done: "Select"
+      }
+    });
+    $('input#input_text, textarea#textarea2').characterCounter();
   });

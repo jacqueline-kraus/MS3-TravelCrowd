@@ -64,7 +64,7 @@ Notes: change debug true to false before submitting!
 Problem:
 Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB
 
-possibility to reuse the registration.html in home.html?
+
 
 
 future feature: changing bg images.. atm too much to investigate (too time consuming)
@@ -102,14 +102,11 @@ padding in form
 
 general styling of forms!!
 
-change font (everywhere)
 
-Make "created by"- session user :: show only own creted deals on profile
 
 Testing for textareas --> eventually limit the amount of characters!
 
 Check reuirements for username/password, it only says "match the reuirements, but not which requirements.
-
 
 
 Placeholder for when there are no deals in my profile yet (newly registered user)
