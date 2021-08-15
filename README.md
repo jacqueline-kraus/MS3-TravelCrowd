@@ -84,6 +84,8 @@ For diagram(database): https://lucid.app/
 
 https://www.befunky.com/create/ for image resize
 
+https://fonts.google.com/specimen/Amatic+SC#pairings : for font
+
 - add credits for authentication scripts
 
 add: @login required
