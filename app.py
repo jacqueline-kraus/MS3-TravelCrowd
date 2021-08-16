@@ -123,7 +123,7 @@ def create_deal():
             "description": request.form.get("description"),
             "departure_airport": request.form.get("departure_airport"),
             "start_date": request.form.get("start_date"),
-            "amount_days": request.form.get("amount_days"),
+            "end_date": request.form.get("end_date"),
             "booking_link": request.form.get("booking_link"),
             "created_by": session["user"]
         }
@@ -147,7 +147,7 @@ def edit_deal(deal_id):
             "description": request.form.get("description"),
             "departure_airport": request.form.get("departure_airport"),
             "start_date": request.form.get("start_date"),
-            "amount_days": request.form.get("amount_days"),
+            "end_date": request.form.get("end_date"),
             "booking_link": request.form.get("booking_link"),
             "created_by": session["user"]
             }
