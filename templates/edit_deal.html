@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="row main-margin">
-        <form class="col s11 m6 offset-m3 white" method="POST" action="{{ url_for('edit_deal', deal_id=deal._id) }}">
+        <form class="col s12 m8 offset-m2 white" method="POST" action="{{ url_for('edit_deal', deal_id=deal._id) }}">
             <h3 class="center-align">Here you can update your Deal</h3><br>
             <!-- deal name -->
             <div class="row">
@@ -63,11 +63,11 @@
                     <label for="start_date">Start Date</label>
                 </div>
             </div>
-            <!-- amount days -->
+            <!-- end date -->
             <div class="row">
                 <div class="input-field col s12 m5 offset-m2">
-                    <input value="{{ deal.amount_days }}" placeholder="For how many days is the stay?" name="amount_days" id="amount_days" type="number" class="validate" required>
-                    <label for="amount_days">Amount of days</label>
+                    <input value="{{ deal.end_date }}" placeholder="Please select the end date of your trip" name="end_date" id="end_date" type="text" class="datepicker" required>
+                    <label for="end_date">End Date</label>
                 </div>
             </div>
             <!-- booking link -->
