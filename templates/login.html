@@ -2,8 +2,8 @@
 {% block content %}
 
 <div class="row">
-    <h3 class="center-align">Login</h3>
-    <form class="col s8 m6 offset-m3 offset-s2 main-margin grey lighten-3" method="POST" action="{{ url_for('login') }}">
+    <form class="col s12 m6 offset-m3 main-margin grey lighten-3" method="POST" action="{{ url_for('login') }}">
+        <h3 class="center-align">Login</h3>
         <!-- username input -->
         <div class="row">
             <div class="input-field col s12">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="row">
-            <a href="{{ url_for('registration') }}" class="col s6 m2 btn green lighten-2 text-shadow offset-m5 offset-s3">Register here</a>
+            <a href="{{ url_for('registration') }}" class="col s6 m2 btn green lighten-2 text-shadow offset-m5 offset-s3">Register</a>
         </div>
     </form>
   </div>
