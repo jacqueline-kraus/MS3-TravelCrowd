@@ -1,7 +1,7 @@
 <!-- edit button -->
-<div class="col s3">
+<div class="col s5 m5">
     {% if session.user|lower == deal.created_by|lower %}
         <a href="{{ url_for('edit_deal', deal_id=deal._id) }}" class="btn-small green lighten-2 text-shadow">Edit</a>
-        <a href="{{ url_for('delete_deal', deal_id=deal._id) }}" class="btn-small text-shadow">DELETE</a>
+        <a href="{{ url_for('delete_deal', deal_id=deal._id) }}" class="btn-small red lighten-3 text-shadow">DELETE</a>
     {% endif %}
 </div>
