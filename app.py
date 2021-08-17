@@ -1,5 +1,6 @@
 import os
 import ssl
+from functools import wraps
 from flask import Flask, flash, render_template, redirect, request, session, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -15,6 +16,17 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app, ssl_cert_reqs=ssl.CERT_NONE)
+
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "user" not in session:
+            flash("You need to be logged in to view this.")
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
 
 @app.route("/")
 @app.route("/home")
@@ -100,6 +112,7 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
+@login_required
 def profile(username):
     if session["user"].lower() == username.lower():
         # find the session.user
@@ -112,6 +125,7 @@ def profile(username):
 
 
 @app.route("/logout")
+@login_required
 def logout():
     # remove user from session cookies
     flash("Successfully logged out!")
@@ -120,6 +134,7 @@ def logout():
 
 
 @app.route("/create_deal", methods=["GET", "POST"])
+@login_required
 def create_deal():
     # add a new deal
     if request.method == "POST":
@@ -143,6 +158,7 @@ def create_deal():
 
 
 @app.route("/edit_deal/<deal_id>", methods=["GET", "POST"])
+@login_required
 def edit_deal(deal_id):
     deal = mongo.db.deals.find_one({"_id": ObjectId(deal_id)})
     if session["user"].lower() == deal["created_by"].lower():
@@ -170,6 +186,7 @@ def edit_deal(deal_id):
 
 
 @app.route("/delete_deal/<deal_id>")
+@login_required
 def delete_deal(deal_id):
     deal = mongo.db.deals.find_one({"_id": ObjectId(deal_id)})
     if session["user"].lower() == deal["created_by"].lower():
