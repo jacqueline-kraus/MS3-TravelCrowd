@@ -28,6 +28,14 @@ def get_deals():
     return render_template("deals.html", deals=deals)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    deals = list(mongo.db.deals.find({"$text": {"$search": query}}))
+    return render_template("deals.html", deals=deals)
+
+
+
 @app.route("/home_loggedin")
 def home_loggedin():
     return render_template("home_loggedin.html")
@@ -171,10 +179,6 @@ def delete_deal(deal_id):
 
     flash("You have no permission to delete this task")
     return redirect(url_for("get_deals"))
-
-
-
-
 
 
 if __name__ == "__main__":
