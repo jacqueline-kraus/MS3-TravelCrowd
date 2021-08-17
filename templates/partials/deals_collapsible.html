@@ -1,39 +1,39 @@
 <div class="row">
-        <div class="col s12 m8 offset-m2">
-
-            {% if not deals %}
-                <div class="row">
-                    <div class="col s12 white-text text-shadow">
-                        <div class="card-panel">
-                            Sorry, no deals found yet, change that by writing one!
-                        </div>
+    <div class="col s12 m8 offset-m2">
+        <!-- if no deals can be found or user in session didn't create yet any deals -->
+        {% if not deals %}
+            <div class="row">
+                <div class="col s12 white-text text-shadow">
+                    <div class="card-panel">
+                        Sorry, no deals found yet, change that by writing one!
                     </div>
                 </div>
-            {% endif %}
-
-            {% if deals %}
-                <ul class="collapsible">
-                    {% for deal in deals %}
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-map-marker-alt"></i>
-                                {{ deal.deal_name }}
-                                {% include "partials/btn-action.html" %}
-                            </div>
-                            <div class="collapsible-body white">
-                                <ul>
-                                    <li>Destination country: {{ deal.destination_country }}</li>
-                                    <li>Destination city: {{ deal.destination_city }}</li>
-                                    <li>Total price: {{ deal.price }}€</li>
-                                    <li>Description: {{ deal.description }}</li>
-                                    <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
-                                    <li>Travel period: {{ deal.period }}</li>
-                                    <li>Booking Link: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
-                                    <li>Created by: {{ deal.created_by }}</li>
-                                </ul>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
+        <!-- show deals if search has results or user in session has created deals -->
+        {% if deals %}
+            <ul class="collapsible">
+                {% for deal in deals %}
+                    <li>
+                        <div class="collapsible-header"><i class="fas fa-map-marker-alt"></i>
+                            {{ deal.deal_name }}
+                            {% include "partials/btn_action.html" %}
+                        </div>
+                        <div class="collapsible-body white">
+                            <ul>
+                                <li>Destination country: {{ deal.destination_country }}</li>
+                                <li>Destination city: {{ deal.destination_city }}</li>
+                                <li>Total price: {{ deal.price }}€</li>
+                                <li>Description: {{ deal.description }}</li>
+                                <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
+                                <li>Travel period: {{ deal.period }}</li>
+                                <li>Booking Link: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
+                                <li>Created by: {{ deal.created_by }}</li>
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
+</div>

@@ -1,43 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
-    <form class="col s12 m6 offset-m3 main-margin grey lighten-3" method="POST" action="{{ url_for('login') }}">
-        <h3 class="center-align">Login</h3>
-        <!-- username input -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-user-circle prefix"></i>
-                <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                <label for="username">Username</label>
+    <div class="row">
+        <form class="col s12 m6 offset-m3 main-margin grey lighten-3" method="POST" action="{{ url_for('login') }}">
+            <h3 class="center-align">Login</h3>
+            <!-- username input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-circle prefix"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="username">Username</label>
+                </div>
             </div>
-        </div>
-        <!-- password input -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-lock prefix"></i>
-                <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                <label for="password">Password</label>
+            <!-- password input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-lock prefix"></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
             </div>
-        </div>
-        <!-- button to submit login -->
-        <div class="row">
-            <button type="submit" class="col s10 m6 btn-large green lighten-2 text-shadow offset-m3 offset-s1">
-                Login
-            </button>
-        </div>
-        <br>
-        <br>
-        <!-- if user doesn't have an account yet, option to register -->
-        <div class="row">
-            <div class="col s12 center-align">
-                <span>Need an account?</span>
+            <!-- button to submit login -->
+            <div class="row">
+                <button type="submit" class="col s10 m6 btn-large green lighten-2 text-shadow offset-m3 offset-s1">
+                    Login
+                </button>
             </div>
-        </div>
-        <div class="row">
-            <a href="{{ url_for('registration') }}" class="col s6 m2 btn green lighten-2 waves-effect waves-light text-shadow offset-m5 offset-s3">Register</a>
-        </div>
-    </form>
-  </div>
+            <br>
+            <br>
+            <!-- if user doesn't have an account yet, option to register -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <span>Need an account?</span>
+                </div>
+            </div>
+            <div class="row">
+                <a href="{{ url_for('registration') }}" class="col s6 m2 btn green lighten-2 waves-effect waves-light text-shadow offset-m5 offset-s3">Register</a>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

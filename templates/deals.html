@@ -25,15 +25,10 @@
             </div>
         </div>
     </div>
-
+    <!-- show deals, if user in session has created deals -->
     {% if session.user %}
         {% include "partials/deals_collapsible.html" %}
     {% endif %}
-
-    
-    {% include "partials/btn-create-deal.html" %}
-    
-
-
+    {% include "partials/btn_create_deal.html" %}
 
 {% endblock  %}

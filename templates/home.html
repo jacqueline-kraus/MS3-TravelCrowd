@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
-    <!-- Registration Form -->
-    <form class="col s12 m5 main-margin grey lighten-3" method="POST" action="{{ url_for('registration') }}">
-    {% include "partials/register_form.html" %}
-    </form>
-    <!-- right side 2 card panels -->
-    <div class="col s12 m6 offset-m1 main-margin">
-        {% include "partials/home_text.html" %}
+    <!-- option for registration and text about the page is shown on homepage -->
+    <div class="row">
+        <!-- registration form -->
+        <form class="col s12 m5 main-margin grey lighten-3" method="POST" action="{{ url_for('registration') }}">
+            {% include "partials/register_form.html" %}
+        </form>
+        <!-- right side two card panels with text -->
+        <div class="col s12 m6 offset-m1 main-margin">
+            {% include "partials/home_text.html" %}
+        </div>
     </div>
+
 {% endblock %}

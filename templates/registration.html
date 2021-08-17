@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-
+    <!-- registration form -->
     <div class="row">
         <form class="col s12 m6 offset-m3 main-margin grey lighten-3" method="POST" action="{{ url_for('registration') }}">
-        {% include "partials/register_form.html" %}
+            {% include "partials/register_form.html" %}
         </form>
     </div>
 
