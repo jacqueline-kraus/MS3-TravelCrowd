@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+
+    <h2 class="center-align white-text text-shadow main-margin">View all deals</h2>
+    <h5 class="center-align white-text text-shadow">Check out all the travel deals! Have a look which amazing deals the community found!</h5>
+
     {% if session.user %}
         {% include "partials/deals_collapsible.html" %}
     {% endif %}
