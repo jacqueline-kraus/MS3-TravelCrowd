@@ -4,20 +4,32 @@
 
 <Showcase>
 --- 
+Requirements questions:
+- Design and implement manual test procedures to assess functionality, usability,
+responsiveness and data management within the Full Stack web application
+
+- Include functions with compound statements such as if conditions and/or loops in your
+Python code
+
+-Write code that meets minimum standards for readability (comments, indentation,
+consistent and meaningful naming conventions).
+
+-Name files consistently and descriptively, without spaces or capitalisation to allow for
+cross-platform compatibility. 
+
+-Design a data model that fits the purpose of the project 
+
 
 WHATS LEFT:
-- changing bg image automatically
 - Add favicon -> [Realfavicongenerator](https://realfavicongenerator.net/): for generating the favicon
-- update Period --> build script to get period automatically from start date + amount of days
-- padding in form
-- add: @login required
-- Check reuirements for username/password, it only says "match the reuirements, but not which requirements.
-- Placeholder for when there are no deals in my profile yet (newly registered user)
+- Change the order of the deal collapsible
 
 future feature:
 - categories,
 - email newsletter
-
+- changing bg image automatically (like bing)
+- Wishlist
+- iata list
 
 MORE NOTES:
 Documentation used:
@@ -28,6 +40,8 @@ Notes: change debug true to false before submitting!
 Problem:
 Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB
 
+helper:
+https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
 
 
 ---
@@ -40,12 +54,18 @@ Photo by Rumman Amin on Unsplash
 Photo by Artyom Manchenkov on Unsplash 
 Photo by Štefan Štefančík on Unsplash 
 Photo by frank mckenna on Unsplash 
-
+Photo by <a href="https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Simon Berger</a> on <a href="https://unsplash.com/s/photos/travel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@mrbrodeur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matthew Brodeur</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@linkhoang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Link Hoang</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pena Lambarri</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pena Lambarri</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 more tools used:
 For diagram(database): https://lucid.app/
 
 https://www.befunky.com/create/ for image resize
-
+Photo by <a href="https://unsplash.com/@recalmedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Recal Media</a> on <a href="https://unsplash.com/s/photos/travel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 --- 
 
