@@ -24,9 +24,13 @@
                                 <li>Destination country: {{ deal.destination_country }}</li>
                                 <li>Destination city: {{ deal.destination_city }}</li>
                                 <li>Total price: {{ deal.price }}€</li>
-                                <li>Description: {{ deal.description }}</li>
-                                <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
-                                <li>Travel period: {{ deal.period }}</li>
+                                {% if deal.description %}
+                                    <li>Description: {{ deal.description }}</li>
+                                {% endif %}
+                                {% if deal.departure_airport %}
+                                    <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
+                                {% endif %}
+                                <li>Travel period: {{ deal.start_date }} - {{ deal.end_date}}</li>
                                 <li>Booking Link: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
                                 <li>Created by: {{ deal.created_by }}</li>
                             </ul>
