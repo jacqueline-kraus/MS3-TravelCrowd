@@ -164,16 +164,16 @@ def edit_deal(deal_id):
     if session["user"].lower() == deal["created_by"].lower():
         if request.method == "POST":
             submit = {
-            "deal_name": request.form.get("deal_name"),
-            "destination_country": request.form.get("destination_country"),
-            "destination_city": request.form.get("destination_city"),
-            "price": request.form.get("price"),
-            "description": request.form.get("description"),
-            "departure_airport": request.form.get("departure_airport"),
-            "start_date": request.form.get("start_date"),
-            "end_date": request.form.get("end_date"),
-            "booking_link": request.form.get("booking_link"),
-            "created_by": session["user"]
+                "deal_name": request.form.get("deal_name"),
+                "destination_country": request.form.get("destination_country"),
+                "destination_city": request.form.get("destination_city"),
+                "price": request.form.get("price"),
+                "description": request.form.get("description"),
+                "departure_airport": request.form.get("departure_airport"),
+                "start_date": request.form.get("start_date"),
+                "end_date": request.form.get("end_date"),
+                "booking_link": request.form.get("booking_link"),
+                "created_by": session["user"]
             }
             mongo.db.deals.update({"_id": ObjectId(deal_id)}, submit)
             flash("Deal successfully updated!")
