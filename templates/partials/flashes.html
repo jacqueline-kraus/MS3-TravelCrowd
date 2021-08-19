@@ -2,9 +2,11 @@
     {% if messages %}
         {% for message in messages%}
             <div class="row flashes">
-                <h4 class="red-text center-align">
-                    {{ message }}
-                </h4>
+                <div class="col s12 m6 offset-m3">
+                    <h4 class="red-text white center-align">
+                        {{ message }}
+                    </h4>
+                </div>
             </div>
         {% endfor %}
     {% endif %}
