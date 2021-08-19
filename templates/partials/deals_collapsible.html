@@ -21,18 +21,17 @@
                         </div>
                         <div class="collapsible-body white">
                             <ul>
-                                <li>Destination country: {{ deal.destination_country }}</li>
-                                <li>Destination city: {{ deal.destination_city }}</li>
-                                <li>Total price: {{ deal.price }}€</li>
+                                <li class="center-align"><i class="fas fa-map-marker-alt"></i> Trip to {{ deal.destination_city }}, {{ deal.destination_country }}</li>
                                 {% if deal.description %}
-                                    <li>Description: {{ deal.description }}</li>
+                                    <li class="center-align">"{{ deal.description }}"</li>
                                 {% endif %}
+                                <li class="center-align">Total price: {{ deal.price }}€</li>
                                 {% if deal.departure_airport %}
-                                    <li>Departure Airport (IATA): {{ deal.departure_airport }}</li>
+                                    <li class="center-align">Departure Airport: {{ deal.departure_airport }}</li>
                                 {% endif %}
-                                <li>Travel period: {{ deal.start_date }} - {{ deal.end_date}}</li>
-                                <li>Booking Link: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
-                                <li>Created by: {{ deal.created_by }}</li>
+                                <li class="center-align">Date: {{ deal.start_date }} - {{ deal.end_date}}</li>
+                                <li class="center-align">Book here: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
+                                <li class="center-align">Created by: {{ deal.created_by }}</li>
                             </ul>
                         </div>
                     </li>
