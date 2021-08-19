@@ -1,74 +1,10 @@
-# [MS3-TravelCrowd]()
+# [MS3-TravelCrowd](http://travelcrowd.herokuapp.com/home)
 
-<Description>
+TravelCrowd is a community platform to share the most amazing travel deals! "Sharing is caring" also (or especially?) counts for travelling! With hundreds of tour operators, an infinite amount of possibilities and for every possible price it is sometimes very hard to find the right trip. Frequent travellers and travel deal hunters know, that travelling does not have to be expensive and that everybody is able to see the world!
+This platform is supposed to help out: A user simply has to register and can view travel deals that other members published. A user can also create, update and delete own deals.
 
 <Showcase>
 --- 
-Requirements questions:
-- Design and implement manual test procedures to assess functionality, usability,
-responsiveness and data management within the Full Stack web application
-
-- Include functions with compound statements such as if conditions and/or loops in your
-Python code
-
--Write code that meets minimum standards for readability (comments, indentation,
-consistent and meaningful naming conventions).
-
--Name files consistently and descriptively, without spaces or capitalisation to allow for
-cross-platform compatibility. 
-
--Design a data model that fits the purpose of the project 
-
-
-WHATS LEFT:
-- Add favicon -> [Realfavicongenerator](https://realfavicongenerator.net/): for generating the favicon
-- Change the order of the deal collapsible
-
-future feature:
-- categories,
-- email newsletter
-- changing bg image automatically (like bing)
-- Wishlist
-- iata list
-
-MORE NOTES:
-Documentation used:
-https://flask.palletsprojects.com/en/2.0.x/quickstart/#a-minimal-application
-
-Notes: change debug true to false before submitting!
-
-Problem:
-Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB
-
-helper:
-https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator
-
-
----
-Credit for images:
-
-Images: https://unsplash.com/
-Photo by Priscilla Du Preez on Unsplash 
-Photo by Rumman Amin on Unsplash 
-
-Photo by Artyom Manchenkov on Unsplash 
-Photo by Štefan Štefančík on Unsplash 
-Photo by frank mckenna on Unsplash 
-Photo by <a href="https://unsplash.com/@8moments?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Simon Berger</a> on <a href="https://unsplash.com/s/photos/travel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  Photo by <a href="https://unsplash.com/@mrbrodeur?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matthew Brodeur</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  Photo by <a href="https://unsplash.com/@linkhoang?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Link Hoang</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  Photo by <a href="https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pena Lambarri</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  Photo by <a href="https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pena Lambarri</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-more tools used:
-For diagram(database): https://lucid.app/
-
-https://www.befunky.com/create/ for image resize
-Photo by <a href="https://unsplash.com/@recalmedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Recal Media</a> on <a href="https://unsplash.com/s/photos/travel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-
---- 
-
 # Table of contents
 - [UX](#ux)
     - [Website owner business goals](#website-owner-business-goals)
@@ -99,83 +35,110 @@ Photo by <a href="https://unsplash.com/@recalmedia?utm_source=unsplash&utm_mediu
 ## User goals
 ### Unregistered user
 - User can register to the platform with a username and password
-- User can see one deal with all details
-- User can subscribe to the newsletter
 
 ### Registered user
 - Registered User can login to the platform with his/her username and password
-- User can see all deals with details, that are on the paltform
+- User can see all deals with details, that are published
 - User can see his/her profile with all deals he/she created
 - User can create a new deal
-    - User can read a deal
-    - User can update his/her created deal
-    - User can delete his/her created deal
-- User can subscribe to the newsletter
+- User can read a deal
+- User can update his/her created deal
+- User can delete his/her created deal
+- Can search for the name of a country or city to find matching deals
 
 
 ## User stories
 ### As a business owner:
 - I offer a community platform to exchange spectacular travel deals.
-- 
+
 ### As a user:
 - I want to see travel deals, that other people found and publish.
-- I want to create and publish my own travel deals.
-- I want to edit/update my own published travel deals.
+- I want to create and publish my own travel deals for the community.
+- I want to update my own published travel deals.
 - I want to delete my own travel deals.
-- I want to be up to date with latest travel deals by receiving an email newsletter.
-
-
+- I want to search quickly for a deal about the country or city I am interested in.
 
 ## Structure of the website
+TravelCrowd is a responsive website, therefore optimized for all devices and screen sizes (desktop, mobile and tablet). It is user friendly designed as it has an intuitive interface and is very descriptive. On the homepage a user can register and log in. When logged in, the user can see more features, like deals that were created by other users or creating a own deal. Furthermore the user has an own profile, in which there are only the deals this certain user created. At last the user has the option to log out.
 
 ## Wireframes
-Wireframes can be found here: [WIREFRAMES]()
+Wireframes can be found here: [WIREFRAMES](readme-files/wireframes/TravelCrowd.pdf)
 
 ## Surface
 ### Fonts
+The main font used is "Amatic SC" (by [Google Fonts](https://fonts.google.com/)) with a sans-serif backup. It is used mainly for all headlines (h1-h6), for the navigation and the items list in the deal. The secondary font is Open Sans, which is used to give some variety. It is mainly used in the footer and in paragraphs.
 
 ### Colors
+Fonts: Either black or white.
+Buttons: #81c784 (Materializecss: green lighten-2) and #ef9a9a (Materializecss red lighten-3).
+Footer: background-color of #e8f5e9 (Materializecss green lighten-5) and font-color of green).
+All text has a text-shadow of rgba(0, 0, 0, 0.5).
 
 ### Images
+Background image from [Unsplash](https://unsplash.com/).
+Icons from [Fontawesome](https://fontawesome.com/)
+
+# Database Schema
+I used one database (travel_crowd) with two collections (deals, users) in [MongoDB Atlas](https://www.mongodb.com/):
+![Database Schema](readme-files/readme-images/TravelCrowd_DB.png)
+
 
 # Features
 
 ## Existing Features
+- Registration
+
+- Login
+
+- View Deals
+
+- Create Deal
+
+- Update Deal
+
+- Delete Deal
+
+- Logout
 
 
 ## Features left to implement:
-
+- Categories: Add categories for the user to choose from and to search for (for instance "Family vacation", "Beach", "Mountains", etc.)
+- Email Newsletter: A user can subscribe to the newsletter and receives updated per email when another member publishes as deal.
+- Changing the background-image automatically: Having automatically changning background-images, that change on reload of the page. This is a source of inspiration and brings the user in a better travelling mood. Idea is similiar to [Bing](https://www.bing.com/).
+- Liked-deals list: Option to save deals of others that a user likes and wants to review later without searching again for it.
+- IATA code list: Autocomplete option for IATA code in the departure airport input field.
 
 
 # Technologies used:
-- [Python](): 
+- [Python](https://www.python.org/): 
 - [Flask]():
 - [HTML](https://en.wikipedia.org/wiki/Hypertext_Markup_Language): for structuring the website
-- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets): to style the HTML code
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets): to write custom style for the HTML code
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript): for interactivity on the website
 - [JQuery](https://jquery.com/): as a JavaScript library
-- [Materializecss](): 
-- [Popper.js](https://getbootstrap.com/docs/4.6/getting-started/introduction/): required by bootstrap for some functionality to work
+- [Materializecss](): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
 - [Fontawesome](https://fontawesome.com/): as an icon library
 - [Google Fonts](https://fonts.google.com/): as a font resource
 - [Balsamiq](https://balsamiq.com/): for creating wireframes
-
-- [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a mockup for my projects readme.
+- [Lucidchart](https://www.lucidchart.com/):
+- [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a showcase image for my projects readme.
 - [Comparium](https://front.comparium.app/livetesting): For live testing on different browsers
 
 
-- [Mongo DB Atlas]():
+- [Mongo DB Atlas](): As a database
 - [Github](https://github.com/): for hosting the projects repository
-- [Heroku]():
+- [Heroku](): for deploying the website
 - [Visual Studio Code](https://code.visualstudio.com/): as a IDE (Integrated Development Environment) for developing the project
 - [Git](https://en.wikipedia.org/wiki/Git): for version control
 
 
 
 # Code Validation
+- [PEP8 checker](http://pep8online.com/): to validate Python code
 - [JShint](https://jshint.com/) to validate JavaScript code
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code
 - [W3 HTML Validator](https://validator.w3.org/) to validate HTML code
+
 
 # Testing
 
@@ -217,30 +180,31 @@ Testing if fetch method is supported by all browsers with [https://caniuse.com/]
 
 Overall Scores:
 
-![Lighthouse scores](readme-files/readme-images/lighthouse_scores.png)
+![Lighthouse scores]()
 
 Accessibility score (needs improvment):
 
-![lighthouse accessibility score](readme-files/readme-images/lighthouse_accessibility_score.png)
+![lighthouse accessibility score]()
 
 ---- 
 
 ## User stories testing
 ### As a business owner:
 - I offer a community platform to exchange spectacular travel deals.
-    > xxx.
+    > User can create and publish own deals and view deals of others.
 
 ### As a user:
 - I want to see travel deals, that other people found and publish.
-    > xxx.
+    > The user can view all travel deals created by others.
 - I want to create and publish my own travel deals.
-    > xxx.
-- I want to edit/update my own published travel deals.
-    > xxx.
+    > The user can create and publish own deals.
+- I want to update my own published travel deals.
+    > The user can update the travel deals created by him/her.
 - I want to delete my own travel deals.
-    > xxx.
-- I want to be up to date with latest travel deals by receiving an email newsletter.
-    > xxx.
+    > The user can delete the travel deals created by him/her.
+- I want to search quickly for a deal about the country or city I am interested in.
+    > The user can use the search to search for a country or city he/she is interested in.
+
 
 
 ## Bugs and problems 
@@ -275,11 +239,58 @@ Accessibility score (needs improvment):
 - [Materializecss documentation]()
 - [Jinja documentation]()
 - [Python documentation]()
+- [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)
+- [Flask Login-required-decorator](https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator)
+
 
 ## Code
 - [Materializecss](): for grid, form and styling of the website
 - [Google Fonts](https://fonts.google.com/): for the fonts used
 - [Fontawesome](https://fontawesome.com/): for the icons
-- Code Insitute Task Manager Mini Project(): for the authentication
+- Code Insitute [Task Manager Mini Project](): for the authentication
 
 ## Acknowledgments
+- A big thank you to my mentor [Tim Nelson](), who not only gave me great tips and recommendations, but also motivated me extremely! Danke!
+
+- I also want to thank the Code Institutes Slack Community for reviewing my code and helping with small issues as well as motivation.
+
+
+---------
+
+
+
+
+
+Requirements questions:
+- Design and implement manual test procedures to assess functionality, usability,
+responsiveness and data management within the Full Stack web application
+
+- Include functions with compound statements such as if conditions and/or loops in your
+Python code
+
+-Write code that meets minimum standards for readability (comments, indentation,
+consistent and meaningful naming conventions).
+
+-Name files consistently and descriptively, without spaces or capitalisation to allow for
+cross-platform compatibility. 
+
+-Design a data model that fits the purpose of the project 
+
+
+WHATS LEFT:
+- Add favicon -> [Realfavicongenerator](https://realfavicongenerator.net/): for generating the favicon
+- Change the order of the deal collapsible
+
+Tims foundings:
+- flags: scotland, northern ireland, england, wales
+- validate python pep8
+- background stretch
+- flashes not easy to read
+- readability of text (colors)
+
+
+
+Notes: change debug true to false before submitting!
+
+Problem:
+Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB
