@@ -1,0 +1,13 @@
+<!-- modal to confirm deal deletion -->
+{% if deal %}
+<div id="modal-{{ deal._id }}" class="modal">
+    <div class="modal-content">
+        <h3>Are you really sure that you want to delete this deal?</h3>
+        <p>Deleting is permanently. Please only delete if the deal is outdated or not bookable anymore.</p>
+    </div>
+    <div class="modal-footer">
+        <a class="btn red lighten-3 waves-effect waves-light text-shadow modal-close">Cancel</a>
+        <a href="{{ url_for('delete_deal', deal_id=deal._id) }}" class="btn green lighten-2 waves-effect waves-light text-shadow">Yes, delete!</a>
+    </div>
+</div>
+{% endif %}

@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('.sidenav').sidenav();
   $('.collapsible').collapsible();
+  $('.modal').modal();
   $('input.autocomplete').autocomplete({
     data: getCountriesData(),
   });
