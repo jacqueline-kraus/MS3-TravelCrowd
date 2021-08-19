@@ -1,7 +1,8 @@
 import os
 import ssl
 from functools import wraps
-from flask import Flask, flash, render_template, redirect, request, session, url_for
+from flask import (
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -47,7 +48,6 @@ def search():
     return render_template("deals.html", deals=deals)
 
 
-
 @app.route("/home_loggedin")
 def home_loggedin():
     return render_template("home_loggedin.html")
@@ -57,11 +57,11 @@ def home_loggedin():
 def registration():
     if "user" not in session:
         # registration is the same as in CI videos
-        if request.method == "POST": 
-            #check if username already exists in database
+        if request.method == "POST":
+            # check if username already exists in database
             existing_user = mongo.db.users.find_one(
                 {"username": request.form.get("username").lower()})
-            
+
             if existing_user:
                 flash("Username already exists")
                 return redirect(url_for("registration"))
@@ -76,9 +76,8 @@ def registration():
             session["user"] = request.form.get("username").lower()
             flash("Registration Successful!")
             return redirect(url_for("profile", username=session["user"]))
-
         return render_template("registration.html")
-    
+
     # user is already logged-in, direct them to their profile
     return redirect(url_for("profile", username=session["user"]))
 
@@ -89,7 +88,8 @@ def login():
         # only if there isn't a current session["user"]
         if request.method == "POST":
             # check if username exists in db
-            existing_user = mongo.db.users.find_one({"username": request.form.get("username").lower()})
+            existing_user = mongo.db.users.find_one(
+                {"username": request.form.get("username").lower()})
 
             if existing_user:
                 # ensure hashed password matches user input
@@ -106,7 +106,7 @@ def login():
                 return redirect(url_for("login"))
 
         return render_template("login.html")
-    
+
     # user is already logged-in, direct them to their profile
     return redirect(url_for("profile", username=session["user"]))
 
@@ -120,7 +120,6 @@ def profile(username):
         # find only deals created by session.user
         deals = list(mongo.db.deals.find({"created_by": username}))
         return render_template("profile.html", user=user, deals=deals)
-    
     return redirect(url_for("login"))
 
 
