@@ -3,8 +3,8 @@
 TravelCrowd is a community platform to share the most amazing travel deals! "Sharing is caring" also (or especially?) counts for travelling! With hundreds of tour operators, an infinite amount of possibilities and for every possible price it is sometimes very hard to find the right trip. Frequent travellers and travel deal hunters know, that travelling does not have to be expensive and that everybody is able to see the world!
 This platform is supposed to help out: A user simply has to register and can view travel deals that other members published. A user can also create, update and delete own deals.
 
-<Showcase>
---- 
+
+
 # Table of contents
 - [UX](#ux)
     - [Website owner business goals](#website-owner-business-goals)
@@ -69,14 +69,14 @@ Wireframes can be found here: [WIREFRAMES](readme-files/wireframes/TravelCrowd.p
 The main font used is "Amatic SC" (by [Google Fonts](https://fonts.google.com/)) with a sans-serif backup. It is used mainly for all headlines (h1-h6), for the navigation and the items list in the deal. The secondary font is Open Sans, which is used to give some variety. It is mainly used in the footer and in paragraphs.
 
 ### Colors
-Fonts: Either black or white.
-Buttons: #81c784 (Materializecss: green lighten-2) and #ef9a9a (Materializecss red lighten-3).
-Footer: background-color of #e8f5e9 (Materializecss green lighten-5) and font-color of green).
-All text has a text-shadow of rgba(0, 0, 0, 0.5).
+- Fonts: Either black or white.
+- Buttons: #81c784 (Materializecss: green lighten-2) and #ef9a9a (Materializecss red lighten-3).
+- Footer: background-color of #e8f5e9 (Materializecss green lighten-5) and font-color of green).
+- All text has a text-shadow of rgba(0, 0, 0, 0.5).
 
 ### Images
-Background image from [Unsplash](https://unsplash.com/).
-Icons from [Fontawesome](https://fontawesome.com/)
+- Background image from [Unsplash](https://unsplash.com/).
+- Icons from [Fontawesome](https://fontawesome.com/)
 
 # Database Schema
 I used one database (travel_crowd) with two collections (deals, users) in [MongoDB Atlas](https://www.mongodb.com/):
@@ -86,19 +86,70 @@ I used one database (travel_crowd) with two collections (deals, users) in [Mongo
 # Features
 
 ## Existing Features
-- Registration
 
-- Login
+### Navigation bar (header)
 
-- View Deals
+### Registration
+User can register with an username and password (with an minimum length of 5 and maximum length of 15, pattern: ^[a-zA-Z0-9]{5,15}$). The registration form can be found on the homepage and in an extra navigation item in the header. If the user has already an account, there is a button in the registration form that can be used to go directly to the login page.
+![Screenshot_Registration]()
 
-- Create Deal
+### Login
+User can login with the username and password used in the registration process. The login form can be found in a dedicated navigation item in the header. If the user does not yet have an account, there is a button in the login form that leads the user directly to the registration form.
+![Screenshot_Login]()
 
-- Update Deal
+### View Deals
+When the user is logged in he/she can see all deals created by everyone in the community.
+![Screenshot_Deals]()
 
-- Delete Deal
+### Search
+In the search box, the user can search for country or city names to filter deals. A message appears, if there is no match.
+![Screenshot_Search]()
 
-- Logout
+
+### Profile
+On the profile page, the user can see all deals he/she created. When there are no deals created yet, a message appears.
+![Screenshot_Profile]()
+
+### Create Deal
+By clicking on the "Create Deal" button, either on the Profile page or on the Deals page, the user can create a deal. To do so, the user has to fill out a form. The form has required and non required items. Those are the form elements:
+- Deal name: required, maximum 30 characters.
+- Destination country: required, uses an autocomplete form (from Materializecss) to show all possible countries (with flags), when start typing.
+- Destination city: required.
+- Price: required, has to be a number.
+- Description: not required.
+- Departure airport: not required, uses a 3 characters IATA code and a pattern of [A-Za-z]{3}.
+- Start date: required, select with a datepicker, start date can not be after the end date.
+- End date: required, select with a datepicker, end date can not be before the start date.
+- Booking link: required, has to be an URL.
+![Screenshot_Create_Deal]()
+
+### Update Deal
+When clicking on the "edit" button, the user is able to update the deal. All input fields are pre filled with the previous value. The user has a choice of a "cancel" and a "update" button.
+![Screenshot_Update_Deal]()
+
+### Delete Deal
+The user can also delete a deal he/she created by clicking on the "delete" button. This will open first a modal, that asks for confirmation for deletion.
+![Screenshot_Create_Deal]()
+
+### Logout
+User can log out of the account on the logout navigation item in the header.
+![Screenshot_Logout]()
+
+### Flash messages
+- When the user tries to view anything, that can be only viewed when logged in.
+- When the user registered successfully.
+- When the username is already taken (in registration process)
+- When the user logged out successfully.
+- When the username/password is wrong while trying to login.
+- When the user published (created) a deal successfully.
+- When the user updated a deal successfully.
+- When the user tries to update or delete a deal that was not created by him/her.
+- When the user deleted a deal created by him/her.
+![Screenshot_Flashes]()
+
+### Modal
+When the user wants to delete a deal, a modal will be shown, that asks for confirmation before finally deleting the deal.
+![Screenshot_Modal]()
 
 
 ## Features left to implement:
@@ -110,30 +161,39 @@ I used one database (travel_crowd) with two collections (deals, users) in [Mongo
 
 
 # Technologies used:
-- [Python](https://www.python.org/): 
-- [Flask]():
-- [HTML](https://en.wikipedia.org/wiki/Hypertext_Markup_Language): for structuring the website
-- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets): to write custom style for the HTML code
+
+### Languages:
+- [Python](https://www.python.org/): for backed logic
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript): for interactivity on the website
-- [JQuery](https://jquery.com/): as a JavaScript library
+
+- [HTML](https://en.wikipedia.org/wiki/Hypertext_Markup_Language): for structuring the website
+
+### For styling:
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets): to write custom style for the HTML code
 - [Materializecss](): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
 - [Fontawesome](https://fontawesome.com/): as an icon library
 - [Google Fonts](https://fonts.google.com/): as a font resource
+
+### Frameworks and libraries:
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a framework for Python
+- [JQuery](https://jquery.com/): as a JavaScript library
+
+### Planning
 - [Balsamiq](https://balsamiq.com/): for creating wireframes
-- [Lucidchart](https://www.lucidchart.com/):
+- [Lucidchart](https://www.lucidchart.com/): for drafting the database
+
+### Testing
 - [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a showcase image for my projects readme.
 - [Comparium](https://front.comparium.app/livetesting): For live testing on different browsers
 
-
-- [Mongo DB Atlas](): As a database
+### And more:
+- [Mongo DB Atlas](): for storing data in a database
 - [Github](https://github.com/): for hosting the projects repository
 - [Heroku](): for deploying the website
 - [Visual Studio Code](https://code.visualstudio.com/): as a IDE (Integrated Development Environment) for developing the project
 - [Git](https://en.wikipedia.org/wiki/Git): for version control
 
-
-
-# Code Validation
+### Code validation
 - [PEP8 checker](http://pep8online.com/): to validate Python code
 - [JShint](https://jshint.com/) to validate JavaScript code
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code
