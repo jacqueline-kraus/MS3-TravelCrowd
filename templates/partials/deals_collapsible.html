@@ -15,23 +15,24 @@
             <ul class="collapsible">
                 {% for deal in deals %}
                     <li>
-                        <div class="collapsible-header"><i class="fas fa-map-marker-alt"></i>
+                        <div class="collapsible-header grey lighten-4"><i class="fas fa-map-marker-alt teal-text"></i>
                             {{ deal.deal_name }}
                             {% include "partials/btn_action.html" %}
                         </div>
-                        <div class="collapsible-body white">
+                        <div class="collapsible-body teal lighten-4">
                             <ul>
-                                <li class="center-align"><i class="fas fa-map-marker-alt"></i> Trip to {{ deal.destination_city }}, {{ deal.destination_country }}</li>
-                                {% if deal.description %}
-                                    <li class="center-align">"{{ deal.description }}"</li>
-                                {% endif %}
-                                <li class="center-align">Total price: {{ deal.price }}€</li>
+                                <li><i class="fas fa-map-marker-alt"></i>  {{ deal.destination_city }}, {{ deal.destination_country }}</li>
+                                <li><i class="far fa-calendar-alt"></i>  {{ deal.start_date }} - {{ deal.end_date}}</li>
                                 {% if deal.departure_airport %}
-                                    <li class="center-align">Departure Airport: {{ deal.departure_airport }}</li>
+                                    <li><i class="fas fa-plane-departure"></i>  {{ deal.departure_airport }}</li>
                                 {% endif %}
-                                <li class="center-align">Date: {{ deal.start_date }} - {{ deal.end_date}}</li>
-                                <li class="center-align">Book here: <a href="{{ deal.booking_link }}" target="_blank">{{ deal.booking_link }}</a></li>
-                                <li class="center-align">Created by: {{ deal.created_by }}</li>
+                                <li><i class="fas fa-coins"></i>  {{ deal.price }}€</li>
+                                <li><i class="fas fa-link"></i><a href="{{ deal.booking_link }}" target="_blank">  {{ deal.booking_link }}</a></li>
+                                <br>
+                                {% if deal.description %}
+                                    <li>"{{ deal.description }}"</li>
+                                {% endif %}
+                                <li>Deal from: {{ deal.created_by }}</li>
                             </ul>
                         </div>
                     </li>
