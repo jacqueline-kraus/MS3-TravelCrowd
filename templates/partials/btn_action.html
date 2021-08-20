@@ -1,9 +1,9 @@
 <div class="col s5 m5">
     {% if session.user|lower == deal.created_by|lower %}
         <!-- edit button -->
-        <a href="{{ url_for('edit_deal', deal_id=deal._id) }}" class="btn-small green lighten-2 waves-effect waves-light text-shadow">Edit</a>
+        <a href="{{ url_for('edit_deal', deal_id=deal._id) }}" class="btn-small teal darken-3 waves-effect waves-light text-shadow">Edit</a>
         <!-- delete button -->
-        <a href="#modal-{{ deal._id }}" class="btn-small red lighten-3 waves-effect waves-light text-shadow modal-trigger">DELETE</a>
+        <a href="#modal-{{ deal._id }}" class="btn-small pink darken-1 waves-effect waves-light text-shadow modal-trigger">DELETE</a>
         {% include "partials/modal.html" %}
     {% endif %}
 </div>

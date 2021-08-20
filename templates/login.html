@@ -7,7 +7,7 @@
             <!-- username input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix"></i>
+                    <i class="fas fa-user-circle prefix teal-text"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
@@ -15,14 +15,14 @@
             <!-- password input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-lock prefix"></i>
+                    <i class="fas fa-lock prefix teal-text"></i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
             <!-- button to submit login -->
             <div class="row">
-                <button type="submit" class="col s10 m6 btn-large green lighten-2 text-shadow offset-m3 offset-s1">
+                <button type="submit" class="col s10 m6 btn-large teal darken-3 text-shadow offset-m3 offset-s1">
                     Login
                 </button>
             </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <a href="{{ url_for('registration') }}" class="col s6 m4 btn green lighten-2 waves-effect waves-light text-shadow offset-m4 offset-s3">Register</a>
+                <a href="{{ url_for('registration') }}" class="col s6 m4 btn teal darken-3 waves-effect waves-light text-shadow offset-m4 offset-s3">Register</a>
             </div>
         </form>
     </div>

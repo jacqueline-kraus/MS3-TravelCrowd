@@ -10,7 +10,7 @@
                     <textarea id="deal_name" name="deal_name" class="materialize-textarea" maxlength="30" required title="Maximum 30 characters.">
                         {{- deal.deal_name -}}
                     </textarea>
-                    <label for="deal_name"><h5 class="green-text">Deal name (max. 30 characters)*</h5></label>
+                    <label for="deal_name"><h5 class="teal-text">Deal name (max. 30 characters)*</h5></label>
                 </div>
             </div>
             <!-- destination_country autocomplete input -->
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="input-field col s12 m8 offset-m2">
                             <input autocomplete="off" type="text" value="{{ deal.destination_country }}" name="destination_country" id="destination_country" class="autocomplete" required>
-                            <label for="destination_country"><h5 class="green-text">Destination country*</h5></label>
+                            <label for="destination_country"><h5 class="teal-text">Destination country*</h5></label>
                         </div>
                     </div>
                 </div>
@@ -30,14 +30,14 @@
                     <textarea id="destination_city" name="destination_city" class="materialize-textarea" required>
                         {{- deal.destination_city -}}
                     </textarea>
-                    <label for="destination_city"><h5 class="green-text">Destination city*</h5></label>
+                    <label for="destination_city"><h5 class="teal-text">Destination city*</h5></label>
                 </div>
             </div>
             <!-- price -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m2">
                     <input value="{{ deal.price }}" name="price" id="price" type="number" class="validate" required>
-                    <label for="price"><h5 class="green-text">Price in €*</h5></label>
+                    <label for="price"><h5 class="teal-text">Price in €*</h5></label>
                 </div>
             </div>
             <!-- description -->
@@ -46,35 +46,35 @@
                     <textarea id="description" name="description" class="materialize-textarea">
                         {{- deal.description -}}
                     </textarea>
-                    <label for="description"><h5 class="green-text">Description</h5></label>
+                    <label for="description"><h5 class="teal-text">Description</h5></label>
                 </div>
             </div>
             <!-- departure airport -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
                     <input value="{{ deal.departure_airport }}" id="departure_airport" name="departure_airport" type="text" class="validate" pattern="[A-Za-z]{3}" maxlength="3" data-length="3" title="Please use a 3 letters IATA code.">
-                    <label for="departure_airport"><h5 class="green-text">Departure airport (3 letters IATA code)</h5></label>
+                    <label for="departure_airport"><h5 class="teal-text">Departure airport (3 letters IATA code)</h5></label>
                 </div>
             </div>
             <!-- start date -->
             <div class="row">
                 <div class="input-field col s12 m8 offset-m2">
                     <input value="{{ deal.start_date }}" type="text" id="start_date" name="start_date" class="datepicker" required>
-                    <label for="start_date"><h5 class="green-text">Start Date*</h5></label>
+                    <label for="start_date"><h5 class="teal-text">Start Date*</h5></label>
                 </div>
             </div>
             <!-- end date -->
             <div class="row">
                 <div class="input-field col s12 m5 offset-m2">
                     <input value="{{ deal.end_date }}" name="end_date" id="end_date" type="text" class="datepicker" required>
-                    <label for="end_date"><h5 class="green-text">End Date*</h5></label>
+                    <label for="end_date"><h5 class="teal-text">End Date*</h5></label>
                 </div>
             </div>
             <!-- booking link -->
             <div class="row">
                 <div class="input-field col s12 m5 offset-m2">
                     <input value="{{ deal.booking_link }}" placeholder="Where can others book this trip?" name="booking_link" id="booking_link" type="url" pattern="https://.*" class="validate" required>
-                    <label for="booking_link"><h5 class="green-text">Booking link*</h5></label>
+                    <label for="booking_link"><h5 class="teal-text">Booking link*</h5></label>
                 </div>
             </div>
             <!-- message asterisk -->
@@ -86,10 +86,10 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn-large green lighten-2 waves-effect waves-light text-shadow" type="submit">
+                    <button class="btn-large teal darken-3 waves-effect waves-light text-shadow" type="submit">
                         Update
                     </button>
-                    <a href="{{ url_for("get_deals") }}" class="btn-large red lighten-3 waves-effect waves-light text-shadow">
+                    <a href="{{ url_for("get_deals") }}" class="btn-large pink darken-1 waves-effect waves-light text-shadow">
                         Cancel
                     </a>
                 </div>
