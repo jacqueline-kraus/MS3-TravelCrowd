@@ -10,6 +10,7 @@ $(document).ready(function () {
     yearRange: 3,
     showClearBtn: true,
     autoClose: true,
+    // https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
     onSelect: function (startDate) {
       var d1 = startDate;
       var d2 = $('#end_date').val();
@@ -31,6 +32,7 @@ $(document).ready(function () {
     yearRange: 3,
     showClearBtn: true,
     autoClose: true,
+    // https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
     onSelect: function (endDate) {
       var d1 = $('#start_date').val();
       var d2 = endDate;
