@@ -165,7 +165,7 @@ User can log out of the account on the logout navigation item in the header.
 - When the username is already taken (in registration process)
 ![screenshot_flash_username_already_exists](readme-files/readme-images/features/flash_messages/flash_username_already_exists.png)
 - When the user logged out successfully.
-![screenshot_flash_logged_out](readme-files/readme-images/flash_messages/features/flash_logged_out.png)
+![screenshot_flash_logged_out](readme-files/readme-images/features/flash_messages/features/flash_logged_out.png)
 - When the username/password is wrong while trying to login.
 ![screenshot_flash_incorrect_usernam_pw](readme-files/readme-images/features/flash_messages/flash_incorrect_usernam_pw.png)
 - When the user published (created) a deal successfully.
@@ -179,7 +179,7 @@ User can log out of the account on the logout navigation item in the header.
 
 ### Modal
 When the user wants to delete a deal, a modal will be shown, that asks for confirmation before finally deleting the deal.
-![screenshot_delete_modal](readme-files/readme-images/flash_messages/delete_modal.png)
+![screenshot_delete_modal](readme-files/readme-images/features/flash_messages/delete_modal.png)
 
 ### Partials
 In this project partials were used to write reusable code that can be easily included in other templates.
@@ -191,6 +191,7 @@ In this project partials were used to write reusable code that can be easily inc
 - Changing the background-image automatically: Having automatically changing background-images, that change on reload of the page. This is a source of inspiration and brings the user in a better travelling mood. Idea is similiar to [Bing](https://www.bing.com/).
 - Liked-deals list: Option to save deals of others that a user likes and wants to review later without searching again for it.
 - IATA code list: Autocomplete option for IATA code in the departure airport input field.
+- Password reset: Give the user the option to change their password
 
 
 # Technologies used:
@@ -206,8 +207,9 @@ In this project partials were used to write reusable code that can be easily inc
 - [Materializecss](https://materializecss.com/): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
 - [Fontawesome](https://fontawesome.com/): as an icon library
 - [Google Fonts](https://fonts.google.com/): as a font resource
-- [Material ](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=2e7d32&secondary.color=d32f2f): to find a good color match with high contrast
+- [Material](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=2e7d32&secondary.color=d32f2f): to find a good color match with high contrast
 - [Favicon](https://favicon.io/): to generate favicon
+- [Countryflags](https://www.countryflags.io/)
 
 ### Frameworks and libraries:
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a framework for Python
@@ -241,18 +243,11 @@ In this project partials were used to write reusable code that can be easily inc
 ## Functionality testing
 For testing responsiveness, styling and interactivity I used for the project [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools).
 
-
---- 
-# NEED TO DO TMR MORNING - Internet too slow
 ## Compatibility testing
 The website was tested through virtual devices with Chrome Developer Tools.
 
-Browsers tested: Google Chrome and Safari.
-
 [Live testing with Comparium](https://front.comparium.app/livetesting)
 - Windows 10 Chrome 89.0
-
-
 - Windows 10 Firefox 85.0
 - Windows 10 Edge 86.0
 - Windows 10 Opera 74.0
@@ -313,13 +308,28 @@ The website was tested on following hardware devices:
     ![screenshot_deals_search](readme-files/readme-images/features/deals_search.png)
 
 ## Bugs and problems
-- check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
+### Color contrast:
+When I started the project I had another color scheme in mind (a mix of #EF9A9A and #4CAF50). The colors should be brighter, so the page reminds of a beach holiday and sun. While developing, though I liked the design, I figured out that the colors I was using had a very low contrast. Accessibility tests in Lighthouse showed that it has a really low score due too the contrast issue. So I changed the colors and in general used more "card-panels", so I could use even the font "Amatic SC", which is used in all headlines throughout the page. The accessibility score in lighthouse is now at 90, which is already good, but still offers room for improvement.
 
-- for countries in UK, the flags are not shown, - flags: scotland, northern ireland, england, wales: Delete countries and keep UK?
---> used GB as countrycode for all countries within the UK
-- finding a bg image that fits to the topic and to the overall design/fonts
+### Issue with SSL certificate:
+Due to a certificate issue, I had to force PyMongo to ignore the SSL certificate, as the website would not open otherwise. After researching I found out, this issue happens mostly to Apple MacBok users. As a workaround, I use this piece in my code:
+```python
+if os.path.exists("env.py"):
+    mongo = PyMongo(app, ssl_cert_reqs=ssl.CERT_NONE)
+else:
+    mongo = PyMongo(app)
+```
+plus I had to
+```python
+import ssl
+```
+Without this code, my app would not connect to the MongoDB and therefore throw an error, everytime I want to open the live page. When I deployed to Heroku the issue was gone, I could open my livepage, hosted on Heroku normally. For future reference, I left the workaround in my app.py file, as it is using a condition, it should not harm any actions.
 
--contrast ratio
+### Flag icons in destination country input field:
+In the form to create or edit a deal is one input field called "destination country". This is an autocomplete field, so when a user starts typing it makes automatic suggestions, country flags inclusive. Only the countries "England, Scotland, Wales and Northern Ireland" would show broken flag images. The website I am using (https://www.countryflags.io/) to automatically fill the flag, depending on the country code, does not deliver those countries. It is only shown "United Kingdom", which includes all of the countries with the broken flags. As a hot fix I deleted the countries and the user has now only the option to select in the dropdown "United Kingdom" with a flag. The user can also type anyways the text on their own, they are not forced to select from the dropdown, so if a user really want to have their e.g. "England", they can manually type the whole word.
+
+### Background image:
+To create a good mood for the user and as the topic is travel, I wanted to use a nice beach image that inspires to book a trip immediately. Unfortunately it was not easy finding an image, that fits with the colors, that fits in the alignment and that is inspirational. In the end I decided for the Maledives image that is now on the page. There is one known issue, that should be fixed in the future: Depending on which page (and which components are on it) the user is, the image stretches with the content. So far I could not figure out how to fix this. As it is not a major issue (it is not disturbing, website still has a nice design, I leave it here as a known issue that can be fixed later.
 
 
 # Database
