@@ -218,9 +218,9 @@ In this project partials were used to write reusable code that can be easily inc
 - [Lucidchart](https://www.lucidchart.com/): for drafting the database
 
 ### Testing
-- [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a showcase image for my projects readme.
+- [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a showcase image for my projects readme
 - [Comparium](https://front.comparium.app/livetesting): For live testing on different browsers
-- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools): constantly testing styling, responsiveness and functionality
 
 ### Miscellaneous:
 - [Mongo DB Atlas](): for storing data in a database
@@ -319,6 +319,9 @@ The website was tested on following hardware devices:
 --> used GB as countrycode for all countries within the UK
 - finding a bg image that fits to the topic and to the overall design/fonts
 
+-contrast ratio
+
+
 # Database
 ## [Mongo DB Atlas]()
 
@@ -371,36 +374,13 @@ https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/
 - I also want to thank the Code Institutes Slack Community for reviewing my code and helping with small issues as well as motivation.
 
 
----------
-
-Requirements questions:
-- Design and implement manual test procedures to assess functionality, usability,
-responsiveness and data management within the Full Stack web application
-
-- Include functions with compound statements such as if conditions and/or loops in your
-Python code
-
--Write code that meets minimum standards for readability (comments, indentation,
-consistent and meaningful naming conventions).
-
--Name files consistently and descriptively, without spaces or capitalisation to allow for
-cross-platform compatibility. 
-
--Design a data model that fits the purpose of the project 
 
 
-WHATS LEFT to do:
-- Add favicon -> [Realfavicongenerator](https://realfavicongenerator.net/): for generating the favicon
 
-Last time help:
-- lines to long (PEP8)
-
-- background? text not readable everywhere
-- any design idea for flashes?
-- change order of collapsible
+----
 
 Last Notes:
 - change debug true to false before submitting!
-- check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
-
-/Applications/Python <YOUR PYTHON VERSION>/Install Certificates.command" open the 'Install Certificates.command' file.
+-Write code that meets minimum standards for readability (comments, indentation,
+consistent and meaningful naming conventions). --> Comments in js and css check
+- check table of contents, if everything is correct
