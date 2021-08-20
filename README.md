@@ -90,6 +90,12 @@ I used one database (travel_crowd) with two collections (deals, users) in [Mongo
 ## Existing Features
 
 ### Navigation bar (header)
+If the user is not logged in yet, the navigation bar shows:
+Logo, Home, Login, Register
+![screenshot_nav_logged_out](readme-files/readme-images/nav_logged_out.png)
+If the user not logged in, the navigation bar shows:
+Logo, Home, Deals, Profile, Logout
+![screenshot_nav_logged_in](readme-files/readme-images/nav_logged_in.png)
 
 ### Home
 For a user who is not logged in the homepage shows the registration form and two text boxes. The first text box should animate the user to sign up and the second explains what TravelCrowd is about.
