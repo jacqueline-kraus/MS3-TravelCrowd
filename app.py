@@ -193,7 +193,7 @@ def delete_deal(deal_id):
         flash("Deal successfully deleted!")
         return redirect(url_for("get_deals"))
 
-    flash("You have no permission to delete this task")
+    flash("You have no permission to delete this deal")
     return redirect(url_for("get_deals"))
 
 
