@@ -1,9 +1,9 @@
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages%}
-            <div class="row flashes">
+            <div class="row">
                 <div class="col s12 m6 offset-m3">
-                    <h4 class="red-text white center-align">
+                    <h4 class="red-text white center-align flashes">
                         {{ message }}
                     </h4>
                 </div>
