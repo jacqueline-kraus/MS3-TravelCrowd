@@ -51,11 +51,6 @@ def search():
     return render_template("deals.html", deals=deals)
 
 
-@app.route("/home_loggedin")
-def home_loggedin():
-    return render_template("home_loggedin.html")
-
-
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
     if "user" not in session:
