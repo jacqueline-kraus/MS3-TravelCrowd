@@ -93,6 +93,7 @@ I used one database (travel_crowd) with two collections (deals, users) in [Mongo
 If the user is not logged in yet, the navigation bar shows:
 Logo, Home, Login, Register
 ![screenshot_nav_logged_out](readme-files/readme-images/nav_logged_out.png)
+
 If the user not logged in, the navigation bar shows:
 Logo, Home, Deals, Profile, Logout
 ![screenshot_nav_logged_in](readme-files/readme-images/nav_logged_in.png)
@@ -172,7 +173,7 @@ User can log out of the account on the logout navigation item in the header.
 - When the user updated a deal successfully.
 ![screenshot_flash_deal_updated](readme-files/readme-images/flash_deal_updated.png)
 - When the user tries to update or delete a deal that was not created by him/her.
-![screenshot_flash_not_allowed](readme-files/readme-images/flash_deal_updated.png)
+![screenshot_flash_not_allowed](readme-files/readme-images/flash_not_allowed.png)
 - When the user deleted a deal created by him/her.
 ![screenshot_flash_deal_deleted](readme-files/readme-images/flash_deal_deleted.png)
 
@@ -186,8 +187,8 @@ In this project partials were used to write reusable code that can be easily inc
 
 ## Features left to implement:
 - Categories: Add categories for the user to choose from and to search for (for instance "Family vacation", "Beach", "Mountains", etc.)
-- Email Newsletter: A user can subscribe to the newsletter and receives updated per email when another member publishes as deal.
-- Changing the background-image automatically: Having automatically changning background-images, that change on reload of the page. This is a source of inspiration and brings the user in a better travelling mood. Idea is similiar to [Bing](https://www.bing.com/).
+- Email Newsletter: A user can subscribe to the newsletter and receives updates per email when another member publishes as deal.
+- Changing the background-image automatically: Having automatically changing background-images, that change on reload of the page. This is a source of inspiration and brings the user in a better travelling mood. Idea is similiar to [Bing](https://www.bing.com/).
 - Liked-deals list: Option to save deals of others that a user likes and wants to review later without searching again for it.
 - IATA code list: Autocomplete option for IATA code in the departure airport input field.
 
@@ -205,7 +206,8 @@ In this project partials were used to write reusable code that can be easily inc
 - [Materializecss](https://materializecss.com/): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
 - [Fontawesome](https://fontawesome.com/): as an icon library
 - [Google Fonts](https://fonts.google.com/): as a font resource
-- [Material ](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=2e7d32&secondary.color=d32f2f)
+- [Material ](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=2e7d32&secondary.color=d32f2f): to find a good color match with high contrast
+- [Favicon](https://favicon.io/): to generate favicon
 
 ### Frameworks and libraries:
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a framework for Python
@@ -218,6 +220,7 @@ In this project partials were used to write reusable code that can be easily inc
 ### Testing
 - [Am I responsive?](http://ami.responsivedesign.is/): for checking responsiveness on different screen sizes and using the screenshot taken from there as a showcase image for my projects readme.
 - [Comparium](https://front.comparium.app/livetesting): For live testing on different browsers
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
 ### Miscellaneous:
 - [Mongo DB Atlas](): for storing data in a database
@@ -271,13 +274,13 @@ The website was tested on following hardware devices:
 
 ## Performance testing with [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-Performance:
+### Performance:
 ![lighthouse_performance](readme-files/readme-images/lighthouse_performance.png)
 
-Accessibility score:
+### Accessibility score:
 ![lighthouse_accessibility](readme-files/readme-images/lighthouse_accessibility.png)
 
-Best Practice & SEO:
+### Best Practice & SEO:
 ![lighthouse_bestpractice_seo](readme-files/readme-images/lighthouse_bestpractice_seo.png)
 
 
@@ -285,18 +288,29 @@ Best Practice & SEO:
 ### As a business owner:
 - I offer a community platform to exchange spectacular travel deals.
     > User can create and publish own deals and view deals of others.
+    ![screenshot_home_logged_out](readme-files/readme-images/home_logged_out.png)
+
 
 ### As a user:
 - I want to see travel deals, that other people found and publish.
     > The user can view all travel deals created by others.
+    ![screenshot_deals_collapsible](readme-files/readme-images/deals_collapsible.png)
+
 - I want to create and publish my own travel deals.
     > The user can create and publish own deals.
+    ![screenshot_create_deal](readme-files/readme-images/create_deal.png)
+
 - I want to update my own published travel deals.
     > The user can update the travel deals created by him/her.
+    ![screenshot_edit_deal](readme-files/readme-images/edit_deal.png)
+
 - I want to delete my own travel deals.
     > The user can delete the travel deals created by him/her.
+    ![screenshot_delete_modal](readme-files/readme-images/delete_modal.png)
+
 - I want to search quickly for a deal about the country or city I am interested in.
     > The user can use the search to search for a country or city he/she is interested in.
+    ![screenshot_deals_search](readme-files/readme-images/deals_search.png)
 
 ## Bugs and problems
 - check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
