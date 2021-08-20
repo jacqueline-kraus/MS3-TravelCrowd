@@ -251,10 +251,6 @@ Best Practice & SEO:
 ![lighthouse best practice and seo scores](readme-files/readme-images/Lighthouse_Best_Practice_and_SEO.png)
 
 
-
-
----- 
-
 ## User stories testing
 ### As a business owner:
 - I offer a community platform to exchange spectacular travel deals.
@@ -360,3 +356,5 @@ Last time help:
 Last Notes:
 - change debug true to false before submitting!
 - check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
+
+/Applications/Python <YOUR PYTHON VERSION>/Install Certificates.command" open the 'Install Certificates.command' file.
