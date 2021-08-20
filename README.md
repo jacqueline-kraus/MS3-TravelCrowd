@@ -170,7 +170,7 @@ When the user wants to delete a deal, a modal will be shown, that asks for confi
 
 ### For styling:
 - [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets): to write custom style for the HTML code
-- [Materializecss](): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
+- [Materializecss](https://materializecss.com/): for responsiveness, styling and some functionality (collapsible, modal, datepicker, form etc.)
 - [Fontawesome](https://fontawesome.com/): as an icon library
 - [Google Fonts](https://fonts.google.com/): as a font resource
 
@@ -207,7 +207,7 @@ For testing responsiveness, styling and interactivity I used for the project [Ch
 
 
 --- 
-
+# NEED TO DO TMR MORNING - Internet too slow
 ## Compatibility testing
 The website was tested through virtual devices with Chrome Developer Tools.
 
@@ -215,6 +215,8 @@ Browsers tested: Google Chrome and Safari.
 
 [Live testing with Comparium](https://front.comparium.app/livetesting)
 - Windows 10 Chrome 89.0
+
+
 - Windows 10 Firefox 85.0
 - Windows 10 Edge 86.0
 - Windows 10 Opera 74.0
@@ -233,18 +235,23 @@ The website was tested on following hardware devices:
 - Google Pixel 4a (5G) with Android 11
 - Microsoft Surface 7 Pro with Windows 10
 
-Testing if fetch method is supported by all browsers with [https://caniuse.com/](https://caniuse.com/)
-![Can I use?](readme-files/readme-images/Caniuse_fetch_screenshot.png)
 
 ## Performance testing with [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-Overall Scores:
+Performance:
 
-![Lighthouse scores]()
+![Lighthouse scores](readme-files/readme-images/Lighthouse_Performance.png)
 
-Accessibility score (needs improvment):
+Accessibility score (needs improvement):
 
-![lighthouse accessibility score]()
+![lighthouse accessibility score](readme-files/readme-images/Lighthouse_Accessibility.png)
+
+Best Practice & SEO:
+
+![lighthouse best practice and seo scores](readme-files/readme-images/Lighthouse_Best_Practice_and_SEO.png)
+
+
+
 
 ---- 
 
@@ -265,9 +272,11 @@ Accessibility score (needs improvment):
 - I want to search quickly for a deal about the country or city I am interested in.
     > The user can use the search to search for a country or city he/she is interested in.
 
+## Bugs and problems
+- check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
 
-
-## Bugs and problems 
+- for countries in UK, the flags are not shown
+- finding a bg image that fits to the topic and to the overall design/fonts
 
 # Database
 ## [Mongo DB Atlas]()
@@ -290,6 +299,10 @@ Accessibility score (needs improvment):
 # Credits
 
 ## Content
+- Content is written by me.
+
+## Images
+- 
 
 
 ## Problem solving helpers
@@ -301,25 +314,22 @@ Accessibility score (needs improvment):
 - [Python documentation]()
 - [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)
 - [Flask Login-required-decorator](https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator)
+- [Shellhacks](https://www.shellhacks.com/jinja2-check-if-variable-empty-exists-defined-true/)
 
 
 ## Code
-- [Materializecss](): for grid, form and styling of the website
+- [Materializecss](https://materializecss.com/): for grid, form and styling of the website
 - [Google Fonts](https://fonts.google.com/): for the fonts used
 - [Fontawesome](https://fontawesome.com/): for the icons
-- Code Insitute [Task Manager Mini Project](): for the authentication
+- [Code Insitute Task Manager Mini Project](https://github.com/Code-Institute-Solutions/TaskManager): for the authentication
 
 ## Acknowledgments
-- A big thank you to my mentor [Tim Nelson](), who not only gave me great tips and recommendations, but also motivated me extremely! Danke!
+- A big thank you to my mentor [Tim Nelson](https://github.com/TravelTimN), who not only gave me great tips and recommendations, but also motivated me extremely! Danke!!
 
 - I also want to thank the Code Institutes Slack Community for reviewing my code and helping with small issues as well as motivation.
 
 
 ---------
-
-
-
-
 
 Requirements questions:
 - Design and implement manual test procedures to assess functionality, usability,
@@ -337,20 +347,16 @@ cross-platform compatibility.
 -Design a data model that fits the purpose of the project 
 
 
-WHATS LEFT:
+WHATS LEFT to do:
 - Add favicon -> [Realfavicongenerator](https://realfavicongenerator.net/): for generating the favicon
-- Change the order of the deal collapsible
 
-Tims foundings:
-- flags: scotland, northern ireland, england, wales
-- validate python pep8
-- background stretch
-- flashes not easy to read
-- readability of text (colors)
+Last time help:
+- lines to long (PEP8)
+- flags: scotland, northern ireland, england, wales: Delete countries and keep UK?
+- background? text not readable everywhere
+- any design idea for flashes?
+- change order of collapsible
 
-
-
-Notes: change debug true to false before submitting!
-
-Problem:
-Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB
+Last Notes:
+- change debug true to false before submitting!
+- check if works on heroku without ssl workaround (Had to import ssl and add as parameter ssl_cert_reqs=ssl.CERT_NONE to mongo, to connect to MongoDB)
