@@ -1,4 +1,5 @@
 import os
+import ssl
 from functools import wraps
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
@@ -15,7 +16,10 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app)
+if os.path.exists("env.py"):
+    mongo = PyMongo(app, ssl_cert_reqs=ssl.CERT_NONE)
+else:
+    mongo = PyMongo(app)
 
 
 def login_required(f):
@@ -36,7 +40,7 @@ def home():
 
 @app.route("/get_deals")
 def get_deals():
-    deals = mongo.db.deals.find()
+    deals = mongo.db.deals.find().sort("_id", -1)
     return render_template("deals.html", deals=deals)
 
 
@@ -67,7 +71,8 @@ def registration():
 
             register = {
                 "username": request.form.get("username").lower(),
-                "password": generate_password_hash(request.form.get("password"))
+                "password": generate_password_hash(
+                    request.form.get("password"))
             }
             mongo.db.users.insert_one(register)
 
@@ -92,9 +97,11 @@ def login():
 
             if existing_user:
                 # ensure hashed password matches user input
-                if check_password_hash(existing_user["password"], request.form.get("password")):
+                if check_password_hash(existing_user["password"],
+                                       request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    return redirect(url_for("profile", username=session["user"]))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
                 else:
                     # invalid password match
                     flash("Incorrect Username and/or Password")
