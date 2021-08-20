@@ -1,5 +1,4 @@
 import os
-import ssl
 from functools import wraps
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
@@ -16,7 +15,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-mongo = PyMongo(app, ssl_cert_reqs=ssl.CERT_NONE)
+mongo = PyMongo(app)
 
 
 def login_required(f):
