@@ -24,7 +24,7 @@ $(document).ready(function () {
 
       if ((date2_ms - date1_ms) < 0) {
         alert('End date cannot be a previous date!');
-        this.setDate('')
+        this.setDate('');
       }
     }
   });
@@ -46,7 +46,7 @@ $(document).ready(function () {
 
       if ((date2_ms - date1_ms) < 0) {
         alert('End date cannot be a previous date!!');
-        this.setDate('')
+        this.setDate('');
       }
     }
   });
@@ -313,7 +313,7 @@ function getCountriesData() {
   let newCountriesList = {};
 
   for (const property in countries) {
-    newCountriesList[`${countries[property]}`] = `https://www.countryflags.io/${property}/flat/64.png`
+    newCountriesList[`${countries[property]}`] = `https://www.countryflags.io/${property}/flat/64.png`;
   }
 
   return newCountriesList;
