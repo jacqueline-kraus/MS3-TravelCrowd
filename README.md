@@ -48,7 +48,7 @@ This platform is supposed to help out: A user simply has to register and can vie
 - User can read a deal
 - User can update his/her created deal
 - User can delete his/her created deal
-- Can search for the name of a country or city to find matching deals
+- User can search for the name of a country or city to find matching deals
 
 
 ## User stories
@@ -66,7 +66,7 @@ This platform is supposed to help out: A user simply has to register and can vie
 TravelCrowd is a responsive website, therefore optimized for all devices and screen sizes (desktop, mobile and tablet). It is user friendly designed as it has an intuitive interface and is very descriptive. On the homepage a user can register and log in. When logged in, the user can see more features, like deals that were created by other users or creating a own deal. Furthermore the user has an own profile, in which there are only the deals this certain user created. At last the user has the option to log out.
 
 ## Wireframes
-Wireframes can be found here: [WIREFRAMES](readme-files/wireframes/travelcrowd.pdf)
+Wireframes can be found here: [WIREFRAMES](readme-files/wireframes/TravelCrowd.pdf)
 
 ## Surface
 ### Fonts
