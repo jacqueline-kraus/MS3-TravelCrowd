@@ -27,7 +27,7 @@ main {
 }
 
 .bg-heroimage {
-    background-image: url('/static/images/heroimage_1.jpg');
+    background-image: url('/static/images/heroimage.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
