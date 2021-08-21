@@ -165,7 +165,7 @@ User can log out of the account on the logout navigation item in the header.
 - When the username is already taken (in registration process)
 ![screenshot_flash_username_already_exists](readme-files/readme-images/features/flash_messages/flash_username_already_exists.png)
 - When the user logged out successfully.
-![screenshot_flash_logged_out](readme-files/readme-images/features/flash_messages/features/flash_logged_out.png)
+![screenshot_flash_logged_out](readme-files/readme-images/features/flash_messages/flash_logged_out.png)
 - When the username/password is wrong while trying to login.
 ![screenshot_flash_incorrect_usernam_pw](readme-files/readme-images/features/flash_messages/flash_incorrect_usernam_pw.png)
 - When the user published (created) a deal successfully.
@@ -179,7 +179,7 @@ User can log out of the account on the logout navigation item in the header.
 
 ### Modal
 When the user wants to delete a deal, a modal will be shown, that asks for confirmation before finally deleting the deal.
-![screenshot_delete_modal](readme-files/readme-images/features/flash_messages/delete_modal.png)
+![screenshot_delete_modal](readme-files/readme-images/features/delete_modal.png)
 
 ### Partials
 In this project partials were used to write reusable code that can be easily included in other templates.
@@ -209,7 +209,7 @@ In this project partials were used to write reusable code that can be easily inc
 - [Google Fonts](https://fonts.google.com/): as a font resource
 - [Material](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=2e7d32&secondary.color=d32f2f): to find a good color match with high contrast
 - [Favicon](https://favicon.io/): to generate favicon
-- [Countryflags](https://www.countryflags.io/)
+- [Countryflags](https://www.countryflags.io/): to decorate a destination dropdown list
 
 ### Frameworks and libraries:
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a framework for Python
@@ -326,7 +326,7 @@ import ssl
 Without this code, my app would not connect to the MongoDB and therefore throw an error, everytime I want to open the live page. When I deployed to Heroku the issue was gone, I could open my livepage, hosted on Heroku normally. For future reference, I left the workaround in my app.py file, as it is using a condition, it should not harm any actions.
 
 ### Flag icons in destination country input field:
-In the form to create or edit a deal is one input field called "destination country". This is an autocomplete field, so when a user starts typing it makes automatic suggestions, country flags inclusive. Only the countries "England, Scotland, Wales and Northern Ireland" would show broken flag images. The website I am using (https://www.countryflags.io/) to automatically fill the flag, depending on the country code, does not deliver those countries. It is only shown "United Kingdom", which includes all of the countries with the broken flags. As a hot fix I deleted the countries and the user has now only the option to select in the dropdown "United Kingdom" with a flag. The user can also type anyways the text on their own, they are not forced to select from the dropdown, so if a user really want to have their e.g. "England", they can manually type the whole word.
+In the form to create or edit a deal is one input field called "destination country". This is an autocomplete field, so when a user starts typing it makes automatic suggestions, country flags inclusive. Only the countries "England, Scotland, Wales and Northern Ireland" would show broken flag images. The website I am using ([countryflags.io](https://www.countryflags.io/)) to automatically fill the flag, depending on the country code, does not deliver those countries. It is only shown "United Kingdom", which includes all of the countries with the broken flags. As a hot fix I deleted the countries and the user has now only the option to select in the dropdown "United Kingdom" with a flag. The user can also type anyways the text on their own, they are not forced to select from the dropdown, so if a user really want to have their e.g. "England", they can manually type the whole word.
 
 ### Background image:
 To create a good mood for the user and as the topic is travel, I wanted to use a nice beach image that inspires to book a trip immediately. Unfortunately it was not easy finding an image, that fits with the colors, that fits in the alignment and that is inspirational. In the end I decided for the Maledives image that is now on the page. There is one known issue, that should be fixed in the future: Depending on which page (and which components are on it) the user is, the image stretches with the content. So far I could not figure out how to fix this. As it is not a major issue (it is not disturbing, website still has a nice design, I leave it here as a known issue that can be fixed later.
@@ -337,8 +337,13 @@ To create a good mood for the user and as the topic is travel, I wanted to use a
 
 
 # Deployment
-## [Heroku]()
-1. 
+
+To run this project, you have to install:
+- [Python3](): to run the app
+- [PIP](): to install all app requirements
+- Any [IDE]() (e.g. [Visual Studio Code]()) or if you want to work virtually e.g. [Gitpod]()
+- [GIT](): for cloning and version control
+- [MongoDB](): to use as a database on MongoDB Atlas.
 
 ## [Local deployment](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 1. Go to repository
@@ -347,29 +352,73 @@ To create a good mood for the user and as the topic is travel, I wanted to use a
 4. Copy the URL presented
 5. Open your Terminal
 6. Create a directory for storing this repository
-7. Type "git clone" and paste the URL in that you previously copied
+7. Type git clone https://github.com/jacqueline-kraus/MS3-TravelCrowd.git
 8. Press enter to create local clone repository
+
+## MongoDB Configuration
+1. Sign up for a free account and login to [MongoDB](https://www.mongodb.com).
+2. (If you are new at MongoDB) create a cluster first by clicking "Create" and following the steps.
+3. Go to your cluster and click on the button "Connect".
+4. Select "Connect to your application".
+5. Select Python as "Driver" and choose "Version 3.6 or later".
+6. Copy the connection link from MongoB.
+7. Create a new `env.py` file in your project.
+
+ ```console
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "<secret_key>")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "<db_name>")
+```
+8. Replace the `<secret_key>`, your data in the connection link and the `<dbname`.
+9. Create an instance of PyMongo in your Python file:
+
+```console
+mongo = PyMongo(app)
+```
+
+## Heroku Deployment
+1. For Heroku to know which required dependencies to install, first create a requirements.txt file by running the following command in the CLI:
+```console
+pip3 freeze --local > requirements.txt
+``` 
+2. Create a Procfile file wit this command:
+```console
+echo web: python run.py > Procfile
+```
+3. Sign up and log in to [Heroku](https://www.heroku.com/).
+4. Create a new app by clicking on the button "New".
+5. Give your app a name, select your region and click "Create app".
+6. Navigate to the "Deploy" tab and select "Github" as a deployment method.
+7. Search for your repository name and connect.
+8. Now open the "Settings" tab and click on "Reveal Config Vars".
+9. Add your configuration variables:
+    `IP`: `0.0.0.0`
+    `PORT`: `5000`
+    `SECRET_KEY`: `<secret_key>`
+    `MONGO_URI`: `mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority`
+    `MONGO_DBNAME`: `<db_name>`
+10. Navigate to the Tab "Deploy" and enable "Automatic Deploys".
+11. Everytime you push now to your Github repository the changes will be automatically deployed in Heroku.
 
 # Credits
 
-## Content
-- Content is written by me.
-
 ## Images
-- Photo by <a href="https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Pena Lambarri</a> on <a href="https://unsplash.com/s/photos/travel-sea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
+- Background Image by [Sebastian Pena Lambarri](https://unsplash.com/@sebaspenalambarri?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
 
 ## Problem solving helpers
 - [w3schools.com](https://www.w3schools.com/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn)
 - [stackoverflow](https://stackoverflow.com/)
-- [Materializecss documentation]()
-- [Jinja documentation]()
-- [Python documentation]()
+- [Materializecss documentation](https://materializecss.com/)
+- [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/)
+- [Python documentation](https://docs.python.org/3/)
 - [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)
 - [Flask Login-required-decorator](https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator)
 - [Shellhacks](https://www.shellhacks.com/jinja2-check-if-variable-empty-exists-defined-true/)
-https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/
 
 ## Code
 - [Materializecss](https://materializecss.com/): for grid, form and styling of the website
@@ -377,6 +426,7 @@ https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/
 - [Fontawesome](https://fontawesome.com/): for the icons
 - [Code Insitute Task Manager Mini Project](https://github.com/Code-Institute-Solutions/TaskManager): for the authentication
 - [Stackoverflow](https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date): how to prevent that end date is before start date, when using datepickers.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/): how to add favicon
 
 ## Acknowledgments
 - A big thank you to my mentor [Tim Nelson](https://github.com/TravelTimN), who not only gave me great tips and recommendations, but also motivated me extremely! Danke!!
@@ -385,12 +435,10 @@ https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/
 
 
 
-
-
-----
-
 Last Notes:
 - change debug true to false before submitting!
 -Write code that meets minimum standards for readability (comments, indentation,
 consistent and meaningful naming conventions). --> Comments in js and css check
 - check table of contents, if everything is correct
+- bg image neu hochladen
+- mongo db clean
