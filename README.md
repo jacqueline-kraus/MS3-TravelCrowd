@@ -97,7 +97,7 @@ If the user is not logged in yet, the navigation bar shows:
 Logo, Home, Login, Register
 ![screenshot_nav_logged_out](readme-files/readme-images/features/nav_logged_out.png)
 
-If the user not logged in, the navigation bar shows:
+If the user is logged in, the navigation bar shows:
 Logo, Home, Deals, Profile, Logout
 ![screenshot_nav_logged_in](readme-files/readme-images/features/nav_logged_in.png)
 
@@ -215,7 +215,7 @@ In this project partials were used to write reusable code that can be easily inc
 - [Countryflags](https://www.countryflags.io/): to decorate a destination dropdown list
 
 ### Frameworks and libraries:
-- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a framework for Python
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)): as a microframework for Python
 - [JQuery](https://jquery.com/): as a JavaScript library
 
 ### Planning
@@ -349,7 +349,7 @@ To create a good mood for the user and as the topic is travel, I wanted to use a
 4. Select "Connect to your application".
 5. Select Python as "Driver" and choose "Version 3.6 or later".
 6. Copy the connection link from MongoB.
-7. Create a new `env.py` file in your project.
+7. Create a new `env.py` file in your project:
 
  ```
 import os
@@ -360,7 +360,7 @@ os.environ.setdefault("SECRET_KEY", "<secret_key>")
 os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority")
 os.environ.setdefault("MONGO_DBNAME", "<db_name>")
 ```
-8. Replace the `<secret_key>`, your data in the connection link and the `<dbname`.
+8. Replace the `<secret_key>`, your data in the connection link and the `<dbname>`.
 9. Create an instance of PyMongo in your Python file:
 
 ```
@@ -384,7 +384,7 @@ To run this project, you have to install:
 4. Copy the URL presented
 5. Open your Terminal
 6. Create a directory for storing this repository
-7. Type git clone https://github.com/jacqueline-kraus/MS3-TravelCrowd.git
+7. Type `git clone https://github.com/jacqueline-kraus/MS3-TravelCrowd.git`
 8. Press enter to create local clone repository
 
 ## Heroku Deployment
@@ -424,8 +424,6 @@ echo web: python run.py > Procfile
 - [Jinja documentation](https://jinja.palletsprojects.com/en/3.0.x/)
 - [Python documentation](https://docs.python.org/3/)
 - [Flask Documentation](https://flask.palletsprojects.com/en/2.0.x/)
-- [Flask Login-required-decorator](https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator)
-- [Shellhacks](https://www.shellhacks.com/jinja2-check-if-variable-empty-exists-defined-true/)
 
 ## Code
 - [Materializecss](https://materializecss.com/): for grid, form and styling of the website
@@ -434,6 +432,8 @@ echo web: python run.py > Procfile
 - [Code Insitute Task Manager Mini Project](https://github.com/Code-Institute-Solutions/TaskManager): for the authentication
 - [Stackoverflow](https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date): how to prevent that end date is before start date, when using datepickers.
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/): how to add favicon
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/patterns/viewdecorators/#login-required-decorator): how to use the login-required-decorator
+- [Shellhacks](https://www.shellhacks.com/jinja2-check-if-variable-empty-exists-defined-true/): reminder on how to use jinja in templates
 
 ## Acknowledgments
 - A big thank you to my mentor [Tim Nelson](https://github.com/TravelTimN), who not only gave me great tips and recommendations, but also motivated me extremely! Until the last minute you were there for me, Danke!!

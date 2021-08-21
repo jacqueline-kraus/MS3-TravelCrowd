@@ -25,7 +25,7 @@ $(document).ready(function () {
       var date2_ms = date2.getTime();
 
       if ((date2_ms - date1_ms) < 0) {
-        alert('End date cannot be a previous date!');
+        alert('Start date cannot be after the end date!');
         this.setDate('');
       }
     }
@@ -47,7 +47,7 @@ $(document).ready(function () {
       var date2_ms = date2.getTime();
 
       if ((date2_ms - date1_ms) < 0) {
-        alert('End date cannot be a previous date!!');
+        alert('End date cannot be before start date!');
         this.setDate('');
       }
     }
