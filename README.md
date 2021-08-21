@@ -333,7 +333,30 @@ To create a good mood for the user and as the topic is travel, I wanted to use a
 
 
 # Database
-## [Mongo DB Atlas]()
+## MongoDB Configuration
+1. Sign up for a free account and login to [MongoDB](https://www.mongodb.com).
+2. (If you are new at MongoDB) create a cluster first by clicking "Create" and following the steps.
+3. Go to your cluster and click on the button "Connect".
+4. Select "Connect to your application".
+5. Select Python as "Driver" and choose "Version 3.6 or later".
+6. Copy the connection link from MongoB.
+7. Create a new `env.py` file in your project.
+
+ ```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "<secret_key>")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "<db_name>")
+```
+8. Replace the `<secret_key>`, your data in the connection link and the `<dbname`.
+9. Create an instance of PyMongo in your Python file:
+
+```
+mongo = PyMongo(app)
+```
 
 
 # Deployment
@@ -355,38 +378,13 @@ To run this project, you have to install:
 7. Type git clone https://github.com/jacqueline-kraus/MS3-TravelCrowd.git
 8. Press enter to create local clone repository
 
-## MongoDB Configuration
-1. Sign up for a free account and login to [MongoDB](https://www.mongodb.com).
-2. (If you are new at MongoDB) create a cluster first by clicking "Create" and following the steps.
-3. Go to your cluster and click on the button "Connect".
-4. Select "Connect to your application".
-5. Select Python as "Driver" and choose "Version 3.6 or later".
-6. Copy the connection link from MongoB.
-7. Create a new `env.py` file in your project.
-
- ```console
-import os
-
-os.environ.setdefault("IP", "0.0.0.0")
-os.environ.setdefault("PORT", "5000")
-os.environ.setdefault("SECRET_KEY", "<secret_key>")
-os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority")
-os.environ.setdefault("MONGO_DBNAME", "<db_name>")
-```
-8. Replace the `<secret_key>`, your data in the connection link and the `<dbname`.
-9. Create an instance of PyMongo in your Python file:
-
-```console
-mongo = PyMongo(app)
-```
-
 ## Heroku Deployment
 1. For Heroku to know which required dependencies to install, first create a requirements.txt file by running the following command in the CLI:
-```console
+```
 pip3 freeze --local > requirements.txt
 ``` 
-2. Create a Procfile file wit this command:
-```console
+2. Create a Procfile file with this command:
+```
 echo web: python run.py > Procfile
 ```
 3. Sign up and log in to [Heroku](https://www.heroku.com/).
@@ -396,11 +394,11 @@ echo web: python run.py > Procfile
 7. Search for your repository name and connect.
 8. Now open the "Settings" tab and click on "Reveal Config Vars".
 9. Add your configuration variables:
-    `IP`: `0.0.0.0`
-    `PORT`: `5000`
-    `SECRET_KEY`: `<secret_key>`
-    `MONGO_URI`: `mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority`
-    `MONGO_DBNAME`: `<db_name>`
+    - **IP** : `0.0.0.0`
+    - **PORT** : `5000`
+    - **SECRET_KEY** : `<secret_key>`
+    - **MONGO_URI** : `mongodb+srv://<username>:<password>@myfirstcluster.iqdue.mongodb.net/<db_name>?retryWrites=true&w=majority`
+    - **MONGO_DBNAME** : `<db_name>`
 10. Navigate to the Tab "Deploy" and enable "Automatic Deploys".
 11. Everytime you push now to your Github repository the changes will be automatically deployed in Heroku.
 
@@ -429,16 +427,6 @@ echo web: python run.py > Procfile
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/patterns/favicon/): how to add favicon
 
 ## Acknowledgments
-- A big thank you to my mentor [Tim Nelson](https://github.com/TravelTimN), who not only gave me great tips and recommendations, but also motivated me extremely! Danke!!
+- A big thank you to my mentor [Tim Nelson](https://github.com/TravelTimN), who not only gave me great tips and recommendations, but also motivated me extremely! Until the last minute you were there for me, Danke!!
 
-- I also want to thank the Code Institutes Slack Community for reviewing my code and helping with small issues as well as motivation.
-
-
-
-Last Notes:
-- change debug true to false before submitting!
--Write code that meets minimum standards for readability (comments, indentation,
-consistent and meaningful naming conventions). --> Comments in js and css check
-- check table of contents, if everything is correct
-- bg image neu hochladen
-- mongo db clean
+- I also want to thank the Code Institutes Slack Community for reviewing my code and helping me with small issues.
