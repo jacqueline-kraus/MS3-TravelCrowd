@@ -14,6 +14,7 @@ This platform is supposed to help out: A user simply has to register and can vie
     - [Structure of the website](#structure-of-the-website)
     - [Wireframes](#wireframes)
     - [Surface](#surface)
+- [Database Schema](#database-schema)
 - [Features](#features)
     - [Existing features](#existing-features)
     - [Features left to implement](#features-left-to-implement)
@@ -23,7 +24,9 @@ This platform is supposed to help out: A user simply has to register and can vie
     - [Funcionality Testing](#functionality-testing)
     - [Compatibility Testing](#compatibility-testing)
     - [User stories testing](#user-stories-testing)
+    - [Performance testing with Lighthouse](#performance-testing-with-lighthouse)
     - [Bugs and problems](#bugs-and-problems)
+- [Database](#database)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -231,12 +234,23 @@ In this project partials were used to write reusable code that can be easily inc
 - [Visual Studio Code](https://code.visualstudio.com/): as a IDE (Integrated Development Environment) for developing the project
 - [Git](https://en.wikipedia.org/wiki/Git): for version control
 
-### Code validation
+### Code Validation
 - [PEP8 checker](http://pep8online.com/): to validate Python code
 - [JShint](https://jshint.com/) to validate JavaScript code
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS code
 - [W3 HTML Validator](https://validator.w3.org/) to validate HTML code
 
+# Code validation
+- [PEP8 checker](http://pep8online.com/): PEP8 compliant! All good!
+- [JShint](https://jshint.com/): 6 Warnings:
+    - 58	'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    - 313	'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    - 315	'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
+    - 316	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+    - 316	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+    - 315	The body of a for in should be wrapped in an if statement to filter unwanted properties - from the prototype.
+- [W3 CSS Validator](https://jigsaw.w3.org/css-validator/): found one error from Materialize. Custom CSS has no errors.
+- [W3 HTML Validator](https://validator.w3.org/): one warning about `<section>`as it has no heading. Otherwise all clear!
 
 # Testing
 
