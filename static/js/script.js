@@ -1,3 +1,5 @@
+/* jshint esversion: 8 */
+
 // materialize initializations
 $(document).ready(function () {
   $('.sidenav').sidenav();

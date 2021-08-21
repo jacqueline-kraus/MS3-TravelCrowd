@@ -242,12 +242,7 @@ In this project partials were used to write reusable code that can be easily inc
 
 # Code validation
 - [PEP8 checker](http://pep8online.com/): PEP8 compliant! All good!
-- [JShint](https://jshint.com/): 6 Warnings:
-    - 58	'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-    - 313	'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-    - 315	'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).
-    - 316	'template literal syntax' is only available in ES6 (use 'esversion: 6').
-    - 316	'template literal syntax' is only available in ES6 (use 'esversion: 6').
+- [JShint](https://jshint.com/): 1 Warning:
     - 315	The body of a for in should be wrapped in an if statement to filter unwanted properties - from the prototype.
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/): found one error from Materialize. Custom CSS has no errors.
 - [W3 HTML Validator](https://validator.w3.org/): one warning about `<section>`as it has no heading. Otherwise all clear!
