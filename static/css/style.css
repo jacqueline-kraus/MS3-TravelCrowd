@@ -1,5 +1,7 @@
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@300&display=swap');
 
+/* custom CSS */
 body {
     font-family: 'Open Sans', sans-serif;
     display: flex;
@@ -12,7 +14,7 @@ main {
 }
 
 .amatic {
-    font-family: 'Amatic SC';
+    font-family: 'Amatic SC', sans-serif;
 }
 
 .logo {
@@ -96,10 +98,6 @@ footer a {
     border-top: #fff solid 1px;
     margin-top: 2rem;
     padding: 0
-}
-
-.bg-box {
-    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .flashes {
