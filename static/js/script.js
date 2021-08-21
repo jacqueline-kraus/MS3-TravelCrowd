@@ -1,3 +1,4 @@
+// materialize initializations
 $(document).ready(function () {
   $('.sidenav').sidenav();
   $('.collapsible').collapsible();
@@ -10,7 +11,7 @@ $(document).ready(function () {
     yearRange: 3,
     showClearBtn: true,
     autoClose: true,
-    // https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
+    // from: https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
     onSelect: function (startDate) {
       var d1 = startDate;
       var d2 = $('#end_date').val();
@@ -32,7 +33,7 @@ $(document).ready(function () {
     yearRange: 3,
     showClearBtn: true,
     autoClose: true,
-    // https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
+    // from: https://stackoverflow.com/questions/36556566/materialize-datepicker-prevent-end-date-before-start-date
     onSelect: function (endDate) {
       var d1 = $('#start_date').val();
       var d2 = endDate;
@@ -53,7 +54,7 @@ $(document).ready(function () {
 });
 
 function getCountriesData() {
-  //Source https://raw.githubusercontent.com/hampusborgos/country-flags/main/countries.json
+  // from: https://raw.githubusercontent.com/hampusborgos/country-flags/main/countries.json
   const countries = {
     "AD": "Andorra",
     "AE": "United Arab Emirates",
@@ -132,10 +133,6 @@ function getCountriesData() {
     "FO": "Faroe Islands",
     "FR": "France",
     "GA": "Gabon",
-    "GB": "England",
-    "GB": "Northern Ireland",
-    "GB": "Scotland",
-    "GB": "Wales",
     "GB": "United Kingdom",
     "GD": "Grenada",
     "GE": "Georgia",
@@ -312,6 +309,7 @@ function getCountriesData() {
     "ZW": "Zimbabwe"
   };
 
+  // loop through countries list to match the right flag to the right country
   let newCountriesList = {};
 
   for (const property in countries) {
